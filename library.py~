@@ -1,0 +1,58 @@
+__all__ = ["get_dims", "load_jma_gri", "find_row_by_galaxy_name"]
+
+import numpy as np
+
+from astropy.io import fits
+from collections import OrderedDict
+
+def get_dims(filename):
+    """Returns a tuple (width, height)"""
+    hdulist = fits.open(filename)
+    hdu = hdulist[0]
+    ret = (hdu.header["NAXIS1"], hdu.header["NAXIS2"])
+    hdulist.close()
+    return ret
+    
+
+def load_jma_gri(filename):
+    """Loads a file such as CALIFA-JMA-gri.mfmtk (it is a CSV file)
+
+    Returns a numpy object q    q???
+    """
+    
+    ret = []
+    
+    with open(filename, "r") as f:
+        s = f.readline().strip()[1:].strip()
+        
+        fieldnames = s.split(",")
+        
+        for line in f:
+            fieldvalues = line.strip().split(",")
+            
+            for i in range(len(fieldvalues)):
+                try:
+                    fieldvalues[i] = float(fieldvalues[i])
+                except:
+                    pass
+
+            row = OrderedDict()
+            for key, value in zip(fieldnames, fieldvalues):
+                row[key] = value
+            ret.append(row)
+    return ret
+    
+    
+def find_row_by_galaxy_name(table, galaxy_name):
+    """Returns dictionary, or None if not found"""
+    ret = None
+    for row in table:
+        if row["rootname65_g"] == galaxy_name:
+            ret = row
+            break
+    return ret
+    
+#   rootname65_g
+#   x0Fit2D_g, y0Fit2D_g
+#   x0Fit2D_r, y0Fit2D_r
+#   x0Fit2D_i, y0Fit2D_i

@@ -1,0 +1,988 @@
+
+
+***** FRAME 00 *****
+SIMPLE  =                    T / file does conform to FITS standard             
+BITPIX  =                  -32 / number of bits per data pixel                  
+NAXIS   =                    2 / number of data axes                            
+NAXIS1  =                  611 / length of data axis 1                          
+NAXIS2  =                  441 / length of data axis 2                          
+EXTEND  =                    T / FITS dataset may contain extensions            
+COMMENT   FITS (Flexible Image Transport System) format is defined in 'Astronomy
+COMMENT   and Astrophysics', volume 376, page 359; bibcode: 2001A&A...376..359H 
+
+
+***** FRAME 01 *****
+XTENSION= 'IMAGE   '           / IMAGE extension                                
+BITPIX  =                  -32 / Bits per pixel                                 
+NAXIS   =                    2 / Number of axes                                 
+NAXIS1  =                  611 / Length of data axis 1                          
+NAXIS2  =                  441 / Length of data axis 2                          
+PCOUNT  =                    0 / number of random group parameters              
+GCOUNT  =                    1 / number of random groups                        
+ORIGIN  = 'NOAO-IRAF FITS Image Kernel July 2003' / FITS file originator        
+DATE    = '2015-06-23T12:57:48' / Date FITS file was generated                  
+IRAF-TLM= '2015-06-23T12:57:48' / Time of last modification                     
+OBJECT  = '86 S[1:611,1:441]'  / Component type                                 
+TAI     =        4476676600.31 / 1st row - Number of seconds since Nov 17 1858  
+RA      =            30.890132 / 1st row - Right ascension of telescope boresigh
+DEC     =           -9.013702  / 1st row - Declination of telescope boresight (d
+SPA     =              85.651  / 1st row - Camera col position angle wrt north (
+IPA     =              75.951  / 1st row - Instrument rotator position angle (de
+IPARATE =             -0.0007  / 1st row - Instrument rotator angular velocity (
+AZ      =            348.53884 / 1st row - Azimuth  (encoder) of tele (0=N?) (de
+ALT     =            47.440871 / 1st row - Altitude (encoder) of tele        (de
+FOCUS   = -999999999999.999999 / 1st row - Focus piston (microns?)              
+DATE-OBS= '2000-09-26'         / 1st row - TAI date                             
+TAIHMS  = '09:16:40.30'        / 1st row - TAI time (HH:MM:SS.SS) (TAI-UT = appr
+COMMENT  TAI,RA,DEC,SPA,IPA,IPARATE,AZ,ALT,FOCUS at reading of col 0, row 0     
+BUNITS  = 'ADUs    '                                                            
+TELESCOP= '2.5m    '                                                            
+TIMESYS = 'TAI     '                                                            
+RUN     =                 1729 / Run number                                     
+FRAME   =                  290 / Frame sequence number within the run           
+CCDLOC  =                   54 / Survey location of CCD (e.g., rowCol)          
+STRIPE  =                   86 / Stripe index number (23 <--> eta=0)            
+STRIP   = 'S       '           / Strip in the stripe being tracked.             
+FLAVOR  = 'science '           / Flavor of this run                             
+SYS_SCN = 'mean    '           / System of the scan great circle (e.g., mean)   
+EQNX_SCN=           2000.00    / Equinox of the scan great circle. (years)      
+NODE    =           95.00000   / RA of the great circle's ascending node (deg)  
+INCL    =           10.00000   / Great circle's inclination wrt cel. eq. (deg)  
+XBORE   =           22.74      / Boresight x offset from the array center (mm)  
+YBORE   =           0.00       / Boresight x offset from the array center (mm)  
+EXPTIME = '53.907456'          / Exposure time (seconds)                        
+SYSTEM  = 'FK5     '           / System of the TCC coordinates (e.g., mean)     
+CCDMODE = 'DRIFT   '           / 'STARING' or 'DRIFT'                           
+C_OBS   =                26322 / CCD row clock rate (usec/row)                  
+COLBIN  =                    1 / Binning factor perpendicular to the columns    
+ROWBIN  =                    1 / Binning factor perpendicular to the rows       
+DAVERS  = 'v14_34  '           / Version of DA software                         
+COMMENT  CCD-specific parameters                                                
+CAMROW  =                    5 / Row in the imaging camera                      
+BADLINES=                    0 / Number of bad lines in frame                   
+EQUINOX = 2.00000000000000E+03                                                  
+SOFTBIAS=                 1000 / software "bias" added to all DN                
+FLUX20  = 2.47514000000000E+03 / Number of DN in 20th mag object                
+FLUX0   = -9.9990000000000E+03 / Number of DN in 0th mag object                 
+FCALI_ID= 'None    '                                                            
+SKY     = 7.44400000000001E+01 / Approx. sky level (DN)                         
+BUNIT   = 'DNs     '                                                            
+FILTER  = 'g       '           / filter used                                    
+CAMCOL  =                    4 / column in the imaging camera                   
+VERSION = 'v5_4_24 '                                                            
+DERV_VER= 'v8_16   '                                                            
+ASTR_VER= 'v5_16   '                                                            
+ASTRO_ID= '2003-06-09T02:07:27 00721'                                           
+BIAS_ID = 'PS      '                                                            
+FRAME_ID= '2003-06-10T17:01:52 22709'                                           
+KO_VER  = 'devel   '                                                            
+PS_ID   = '2003-06-08T14:55:35 03290 camCol 4'                                  
+ATVSN   = 'v5_16   '           / ASTROTOOLS version tag                         
+RADECSYS= 'ICRS    '           / International Celestial Ref. System            
+CTYPE1  = 'RA---TAN'                                                            
+CTYPE2  = 'DEC--TAN'                                                            
+CUNIT1  = 'deg     '                                                            
+CUNIT2  = 'deg     '                                                            
+CRPIX1  =     695.500000000002 / Column Pixel Coordinate of Ref. Pixel          
+CRPIX2  =     605.500000000001 / Row Pixel Coordinate of Ref. Pixel             
+CRVAL1  = 3.02417909000000E+01 / RA at Reference Pixel                          
+CRVAL2  = -8.9575408100000E+00 / DEC at Reference Pixel                         
+CD1_1   = -8.1374984465687E-06 / RA  degrees per column pixel                   
+CD1_2   = 1.09694000644156E-04 / RA  degrees per row pixel                      
+CD2_1   = 1.09662988281250E-04 / DEC degrees per column pixel                   
+CD2_2   = 8.14592741935460E-06 / DEC degrees per row pixel                      
+WCSDIM  =                    2                                                  
+LTV1    =                -329.                                                  
+LTV2    =                -139.                                                  
+LTM1_1  =                   1.                                                  
+LTM2_2  =                   1.                                                  
+WAT0_001= 'system=image'                                                        
+WAT1_001= 'wtype=tan axtype=ra'                                                 
+WAT2_001= 'wtype=tan axtype=dec'                                                
+LOGFILE = 'outputs/NGC0787_ss.galfit.01' / GALFIT best-fit menu file            
+EXTNAME = 'INPUT_g '           / Extension name                                 
+
+
+***** FRAME 02 *****
+XTENSION= 'IMAGE   '           / IMAGE extension                                
+BITPIX  =                  -32 / Bits per pixel                                 
+NAXIS   =                    2 / Number of axes                                 
+NAXIS1  =                  611 / Length of data axis 1                          
+NAXIS2  =                  441 / Length of data axis 2                          
+PCOUNT  =                    0 / number of random group parameters              
+GCOUNT  =                    1 / number of random groups                        
+ORIGIN  = 'NOAO-IRAF FITS Image Kernel July 2003' / FITS file originator        
+DATE    = '2015-06-23T12:51:18' / Date FITS file was generated                  
+IRAF-TLM= '2015-06-23T12:51:18' / Time of last modification                     
+OBJECT  = '86 S[1:611,1:441]'  / Component type                                 
+TAI     =        4476676313.70 / 1st row - Number of seconds since Nov 17 1858  
+RA      =            29.680570 / 1st row - Right ascension of telescope boresigh
+DEC     =           -9.102540  / 1st row - Declination of telescope boresight (d
+SPA     =              85.842  / 1st row - Camera col position angle wrt north (
+IPA     =              76.143  / 1st row - Instrument rotator position angle (de
+IPARATE =             -0.0007  / 1st row - Instrument rotator angular velocity (
+AZ      =            348.54311 / 1st row - Azimuth  (encoder) of tele (0=N?) (de
+ALT     =            47.351336 / 1st row - Altitude (encoder) of tele        (de
+FOCUS   = -999999999999.999999 / 1st row - Focus piston (microns?)              
+DATE-OBS= '2000-09-26'         / 1st row - TAI date                             
+TAIHMS  = '09:11:53.69'        / 1st row - TAI time (HH:MM:SS.SS) (TAI-UT = appr
+COMMENT  TAI,RA,DEC,SPA,IPA,IPARATE,AZ,ALT,FOCUS at reading of col 0, row 0     
+BUNITS  = 'ADUs    '                                                            
+TELESCOP= '2.5m    '                                                            
+TIMESYS = 'TAI     '                                                            
+RUN     =                 1729 / Run number                                     
+FRAME   =                  282 / Frame sequence number within the run           
+CCDLOC  =                   14 / Survey location of CCD (e.g., rowCol)          
+STRIPE  =                   86 / Stripe index number (23 <--> eta=0)            
+STRIP   = 'S       '           / Strip in the stripe being tracked.             
+FLAVOR  = 'science '           / Flavor of this run                             
+SYS_SCN = 'mean    '           / System of the scan great circle (e.g., mean)   
+EQNX_SCN=           2000.00    / Equinox of the scan great circle. (years)      
+NODE    =           95.00000   / RA of the great circle's ascending node (deg)  
+INCL    =           10.00000   / Great circle's inclination wrt cel. eq. (deg)  
+XBORE   =           22.74      / Boresight x offset from the array center (mm)  
+YBORE   =           0.00       / Boresight x offset from the array center (mm)  
+EXPTIME = '53.907456'          / Exposure time (seconds)                        
+SYSTEM  = 'FK5     '           / System of the TCC coordinates (e.g., mean)     
+CCDMODE = 'DRIFT   '           / 'STARING' or 'DRIFT'                           
+C_OBS   =                26322 / CCD row clock rate (usec/row)                  
+COLBIN  =                    1 / Binning factor perpendicular to the columns    
+ROWBIN  =                    1 / Binning factor perpendicular to the rows       
+DAVERS  = 'v14_34  '           / Version of DA software                         
+COMMENT  CCD-specific parameters                                                
+CAMROW  =                    1 / Row in the imaging camera                      
+BADLINES=                    0 / Number of bad lines in frame                   
+EQUINOX = 2.00000000000000E+03                                                  
+SOFTBIAS=                 1000 / software "bias" added to all DN                
+FLUX20  = 1.94386000000000E+03 / Number of DN in 20th mag object                
+FLUX0   = -9.9990000000000E+03 / Number of DN in 0th mag object                 
+FCALI_ID= 'None    '                                                            
+SKY     = 1.53080000000000E+02 / Approx. sky level (DN)                         
+BUNIT   = 'DNs     '                                                            
+FILTER  = 'r       '           / filter used                                    
+CAMCOL  =                    4 / column in the imaging camera                   
+VERSION = 'v5_4_24 '                                                            
+DERV_VER= 'v8_16   '                                                            
+ASTR_VER= 'v5_16   '                                                            
+ASTRO_ID= '2003-06-09T02:07:27 00721'                                           
+BIAS_ID = 'PS      '                                                            
+FRAME_ID= '2003-06-10T17:01:52 22709'                                           
+KO_VER  = 'devel   '                                                            
+PS_ID   = '2003-06-08T14:55:35 03290 camCol 4'                                  
+ATVSN   = 'v5_16   '           / ASTROTOOLS version tag                         
+RADECSYS= 'ICRS    '           / International Celestial Ref. System            
+CTYPE1  = 'RA---TAN'                                                            
+CTYPE2  = 'DEC--TAN'                                                            
+CUNIT1  = 'deg     '                                                            
+CUNIT2  = 'deg     '                                                            
+CRPIX1  =     695.500000000002 / Column Pixel Coordinate of Ref. Pixel          
+CRPIX2  =     655.500000000001 / Row Pixel Coordinate of Ref. Pixel             
+CRVAL1  = 3.02428459500000E+01 / RA at Reference Pixel                          
+CRVAL2  = -8.9574902200000E+00 / DEC at Reference Pixel                         
+CD1_1   = -8.1212114220977E-06 / RA  degrees per column pixel                   
+CD1_2   = 1.09707146801934E-04 / RA  degrees per row pixel                      
+CD2_1   = 1.09708647460937E-04 / DEC degrees per column pixel                   
+CD2_2   = 8.14356854838746E-06 / DEC degrees per row pixel                      
+WCSDIM  =                    2                                                  
+LTV1    =                -329.                                                  
+LTV2    =                 -89.                                                  
+LTM1_1  =                   1.                                                  
+LTM2_2  =                   1.                                                  
+WAT0_001= 'system=image'                                                        
+WAT1_001= 'wtype=tan axtype=ra'                                                 
+WAT2_001= 'wtype=tan axtype=dec'                                                
+LOGFILE = 'outputs/NGC0787_ss.galfit.01' / GALFIT best-fit menu file            
+EXTNAME = 'INPUT_r '           / Extension name                                 
+
+
+***** FRAME 03 *****
+XTENSION= 'IMAGE   '           / IMAGE extension                                
+BITPIX  =                  -32 / Bits per pixel                                 
+NAXIS   =                    2 / Number of axes                                 
+NAXIS1  =                  551 / Length of data axis 1                          
+NAXIS2  =                  441 / Length of data axis 2                          
+PCOUNT  =                    0 / number of random group parameters              
+GCOUNT  =                    1 / number of random groups                        
+ORIGIN  = 'NOAO-IRAF FITS Image Kernel July 2003' / FITS file originator        
+DATE    = '2015-06-23T13:06:20' / Date FITS file was generated                  
+IRAF-TLM= '2015-06-23T13:06:20' / Time of last modification                     
+OBJECT  = '86 S[1:551,1:441]'  / Component type                                 
+TAI     =        4476676385.34 / 1st row - Number of seconds since Nov 17 1858  
+RA      =            29.982990 / 1st row - Right ascension of telescope boresigh
+DEC     =           -9.080704  / 1st row - Declination of telescope boresight (d
+SPA     =              85.794  / 1st row - Camera col position angle wrt north (
+IPA     =              76.095  / 1st row - Instrument rotator position angle (de
+IPARATE =             -0.0007  / 1st row - Instrument rotator angular velocity (
+AZ      =            348.54221 / 1st row - Azimuth  (encoder) of tele (0=N?) (de
+ALT     =            47.373361 / 1st row - Altitude (encoder) of tele        (de
+FOCUS   = -999999999999.999999 / 1st row - Focus piston (microns?)              
+DATE-OBS= '2000-09-26'         / 1st row - TAI date                             
+TAIHMS  = '09:13:05.34'        / 1st row - TAI time (HH:MM:SS.SS) (TAI-UT = appr
+COMMENT  TAI,RA,DEC,SPA,IPA,IPARATE,AZ,ALT,FOCUS at reading of col 0, row 0     
+BUNITS  = 'ADUs    '                                                            
+TELESCOP= '2.5m    '                                                            
+TIMESYS = 'TAI     '                                                            
+RUN     =                 1729 / Run number                                     
+FRAME   =                  284 / Frame sequence number within the run           
+CCDLOC  =                   24 / Survey location of CCD (e.g., rowCol)          
+STRIPE  =                   86 / Stripe index number (23 <--> eta=0)            
+STRIP   = 'S       '           / Strip in the stripe being tracked.             
+FLAVOR  = 'science '           / Flavor of this run                             
+SYS_SCN = 'mean    '           / System of the scan great circle (e.g., mean)   
+EQNX_SCN=           2000.00    / Equinox of the scan great circle. (years)      
+NODE    =           95.00000   / RA of the great circle's ascending node (deg)  
+INCL    =           10.00000   / Great circle's inclination wrt cel. eq. (deg)  
+XBORE   =           22.74      / Boresight x offset from the array center (mm)  
+YBORE   =           0.00       / Boresight x offset from the array center (mm)  
+EXPTIME = '53.907456'          / Exposure time (seconds)                        
+SYSTEM  = 'FK5     '           / System of the TCC coordinates (e.g., mean)     
+CCDMODE = 'DRIFT   '           / 'STARING' or 'DRIFT'                           
+C_OBS   =                26322 / CCD row clock rate (usec/row)                  
+COLBIN  =                    1 / Binning factor perpendicular to the columns    
+ROWBIN  =                    1 / Binning factor perpendicular to the rows       
+DAVERS  = 'v14_34  '           / Version of DA software                         
+COMMENT  CCD-specific parameters                                                
+CAMROW  =                    2 / Row in the imaging camera                      
+BADLINES=                    0 / Number of bad lines in frame                   
+EQUINOX = 2.00000000000000E+03                                                  
+SOFTBIAS=                 1000 / software "bias" added to all DN                
+FLUX20  = 1.51105000000000E+03 / Number of DN in 20th mag object                
+FLUX0   = -9.9990000000000E+03 / Number of DN in 0th mag object                 
+FCALI_ID= 'None    '                                                            
+SKY     = 2.72190000000000E+02 / Approx. sky level (DN)                         
+BUNIT   = 'DNs     '                                                            
+FILTER  = 'i       '           / filter used                                    
+CAMCOL  =                    4 / column in the imaging camera                   
+VERSION = 'v5_4_24 '                                                            
+DERV_VER= 'v8_16   '                                                            
+ASTR_VER= 'v5_16   '                                                            
+ASTRO_ID= '2003-06-09T02:07:27 00721'                                           
+BIAS_ID = 'PS      '                                                            
+FRAME_ID= '2003-06-10T17:01:52 22709'                                           
+KO_VER  = 'devel   '                                                            
+PS_ID   = '2003-06-08T14:55:35 03290 camCol 4'                                  
+ATVSN   = 'v5_16   '           / ASTROTOOLS version tag                         
+RADECSYS= 'ICRS    '           / International Celestial Ref. System            
+CTYPE1  = 'RA---TAN'                                                            
+CTYPE2  = 'DEC--TAN'                                                            
+CUNIT1  = 'deg     '                                                            
+CUNIT2  = 'deg     '                                                            
+CRPIX1  =     655.500000000002 / Column Pixel Coordinate of Ref. Pixel          
+CRPIX2  =     605.500000000001 / Row Pixel Coordinate of Ref. Pixel             
+CRVAL1  = 3.02425477400000E+01 / RA at Reference Pixel                          
+CRVAL2  = -8.9574481700000E+00 / DEC at Reference Pixel                         
+CD1_1   = -8.1393333603891E-06 / RA  degrees per column pixel                   
+CD1_2   = 1.09698310413327E-04 / RA  degrees per row pixel                      
+CD2_1   = 1.09689760742188E-04 / DEC degrees per column pixel                   
+CD2_2   = 8.16194892473146E-06 / DEC degrees per row pixel                      
+WCSDIM  =                    2                                                  
+LTV1    =                -369.                                                  
+LTV2    =                -139.                                                  
+LTM1_1  =                   1.                                                  
+LTM2_2  =                   1.                                                  
+WAT0_001= 'system=image'                                                        
+WAT1_001= 'wtype=tan axtype=ra'                                                 
+WAT2_001= 'wtype=tan axtype=dec'                                                
+LOGFILE = 'outputs/NGC0787_ss.galfit.01' / GALFIT best-fit menu file            
+EXTNAME = 'INPUT_i '           / Extension name                                 
+
+
+***** FRAME 04 *****
+XTENSION= 'IMAGE   '           / IMAGE extension                                
+BITPIX  =                  -32 / number of bits per data pixel                  
+NAXIS   =                    2 / number of data axes                            
+NAXIS1  =                  611 / length of data axis 1                          
+NAXIS2  =                  441 / length of data axis 2                          
+PCOUNT  =                    0 / required keyword; must = 0                     
+GCOUNT  =                    1 / required keyword; must = 1                     
+OBJECT  = 'MODEL_g '           / Component type                                 
+EXTNAME = 'MODEL_g '           / Extension name                                 
+COMMENT ========== GALFIT Input Parameters ==========                           
+INITFILE= 'galfit.feedme'      / GALFIT input file                              
+BANDS   = 'g,r,i   '           / Band labels                                    
+WL_G    =                4770. / Band wavelength                                
+DATAIN_G= 'NGC0787_g.fits'     / Input data image                               
+SIGMA_G = 'none    '           / Input sigma image                              
+PSF_G   = 'psf_NGC0787_g.fits ' / Convolution PSF and kernel                    
+MASK_G  = 'none    '           / Input mask image                               
+MAGZPT_G=                25.11 / Magnitude zeropoint                            
+WL_R    =                6231. / Band wavelength                                
+DATAIN_R= 'NGC0787_r.fits'     / Input data image                               
+SIGMA_R = 'none    '           / Input sigma image                              
+PSF_R   = 'psf_NGC0787_r.fits ' / Convolution PSF and kernel                    
+MASK_R  = 'none    '           / Input mask image                               
+MAGZPT_R=                 24.8 / Magnitude zeropoint                            
+WL_I    =                7625. / Band wavelength                                
+DATAIN_I= 'NGC0787_i.fits'     / Input data image                               
+SIGMA_I = 'none    '           / Input sigma image                              
+PSF_I   = 'psf_NGC0787_i.fits ' / Convolution PSF and kernel                    
+MASK_I  = 'none    '           / Input mask image                               
+MAGZPT_I=                24.36 / Magnitude zeropoint                            
+CONSTRNT= 'none    '           / Parameter constraint file                      
+FITSECT = '[1:551,1:441]'      / Image section fitted                           
+CONVBOX = '200, 200'           / Convolution box size                           
+MINSIGMA=                   0. / Min. sigma factor                              
+NITER   =                   28 / Number of iterations                           
+FIRSTCON=                   -1 / First constrained iteration                    
+LASTCON =                   -1 / Last constrained iteration                     
+COMMENT ========== GALFIT Final Parameters ==========                           
+COMP_1  = 'sky     '           / Component type                                 
+1_XC_0  = '[276.0000]'         / X center [pixel]                               
+1_YC_0  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_0 = '[1.4527]'           / Sky background [ADUs]                          
+1_XC_1  = '[276.0000]'         / X center [pixel]                               
+1_YC_1  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_1 = '[0.3027]'           / Sky background [ADUs]                          
+1_XC_2  = '[276.0000]'         / X center [pixel]                               
+1_YC_2  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_2 = '[0.4892]'           / Sky background [ADUs]                          
+1_DSDX_0= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_1= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_2= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDY_0= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_1= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_2= '[0.000e+00]'        / y sky gradient [ADUs]                          
+COMMENT ------------------------------------------------------------------------
+COMP_2  = 'sersic  '           / Component type                                 
+2_XC_0  = '303.9614 +/- 0.0027' / X center [pixel]                              
+2_XC_1  = '[-20.1985]'         / X center [pixel]                               
+2_XC_2  = '[-10.4689]'         / X center [pixel]                               
+2_YC_0  = '242.9569 +/- 0.0032' / Y center [pixel]                              
+2_YC_1  = '[-3.5065]'          / Y center [pixel]                               
+2_YC_2  = '[-22.0728]'         / Y center [pixel]                               
+2_MAG_0 = '13.0122 +/- 0.0006' / Integrated magnitude [mag]                     
+2_MAG_1 = '-0.7158 +/- 0.0016' / Integrated magnitude [mag]                     
+2_MAG_2 = '0.0505 +/- 0.0005'  / Integrated magnitude [mag]                     
+2_RE_0  = '57.0983 +/- 0.0603' / Effective radius Re [pixels]                   
+2_RE_1  = '3.2773 +/- 0.1700'  / Effective radius Re [pixels]                   
+2_RE_2  = '[0.000e+00]'        / Effective radius Re [pixels]                   
+2_N_0   = '3.8559 +/- 0.0025'  / Sersic index                                   
+2_N_1   = '0.5735 +/- 0.0072'  / Sersic index                                   
+2_N_2   = '[0.000e+00]'        / Sersic index                                   
+2_AR_0  = '0.8013 +/- 0.0003'  / Axis ratio (b/a)                               
+2_AR_1  = '[3.701e-17]'        / Axis ratio (b/a)                               
+2_AR_2  = '[7.401e-17]'        / Axis ratio (b/a)                               
+2_PA_0  = '-2.5135 +/- 0.0638' / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_1  = '[0.000e+00]'        / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_2  = '[0.000e+00]'        / Position Angle (PA) [degrees: Up=0, Left=90]   
+COMMENT ------------------------------------------------------------------------
+FLAGS   = 'A-6 H-3 H-4 A-3 A-4 I-2 A-5 2 ' / See `galfit -help' for details.    
+COMMENT ------------------------------------------------------------------------
+1_XC_G  = '[276.0000]'         / X center [pixel]                               
+1_YC_G  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_G = '[1.6391]'           / Sky background [ADUs]                          
+1_XC_R  = '[276.0000]'         / X center [pixel]                               
+1_YC_R  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_R = '[0.9711]'           / Sky background [ADUs]                          
+1_XC_I  = '[276.0000]'         / X center [pixel]                               
+1_YC_I  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_I = '[2.2446]'           / Sky background [ADUs]                          
+1_DSDX_G= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_R= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_I= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDY_G= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_R= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_I= '[0.000e+00]'        / y sky gradient [ADUs]                          
+COMMENT ------------------------------------------------------------------------
+2_XC_G  = '313.6911 +/- 0.0055' / X center [pixel]                              
+2_XC_R  = '313.9448 +/- 0.0055' / X center [pixel]                              
+2_XC_I  = '273.2941 +/- 0.0055' / X center [pixel]                              
+2_YC_G  = '224.3907 +/- 0.0063' / Y center [pixel]                              
+2_YC_R  = '264.9231 +/- 0.0063' / Y center [pixel]                              
+2_YC_I  = '217.3777 +/- 0.0063' / Y center [pixel]                              
+2_MAG_G = '13.7785 +/- 0.0020' / Integrated magnitude [mag]                     
+2_MAG_R = '12.9450 +/- 0.0013' / Integrated magnitude [mag]                     
+2_MAG_I = '12.3470 +/- 0.0020' / Integrated magnitude [mag]                     
+2_RE_G  = '53.8210 +/- 0.1827' / Effective radius Re [pixels]                   
+2_RE_R  = '57.1752 +/- 0.1217' / Effective radius Re [pixels]                   
+2_RE_I  = '60.3756 +/- 0.2314' / Effective radius Re [pixels]                   
+2_N_G   = '3.2823 +/- 0.0083'  / Sersic index                                   
+2_N_R   = '3.8693 +/- 0.0051'  / Sersic index                                   
+2_N_I   = '4.4294 +/- 0.0093'  / Sersic index                                   
+2_AR_G  = '0.8013 +/- 0.0006'  / Axis ratio (b/a)                               
+2_AR_R  = '0.8013 +/- 0.0006'  / Axis ratio (b/a)                               
+2_AR_I  = '0.8013 +/- 0.0006'  / Axis ratio (b/a)                               
+2_PA_G  = '-2.5135 +/- 0.1276' / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_R  = '-2.5135 +/- 0.1276' / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_I  = '-2.5135 +/- 0.1276' / Position Angle (PA) [degrees: Up=0, Left=90]   
+COMMENT ------------------------------------------------------------------------
+COMMENT ------------------------------------------------------------------------
+VERSION = 'galfitm-1.2.1'      / galfitm version                                
+CHISQ   =     883996.397816135 / Chi^2 of fit                                   
+NDOF    =               781882 / Degrees of freedom                             
+NFREE   =                   11 / Number of free parameters                      
+NFIX    =                   19 / Number of fixed parameters                     
+CHI2NU  =     1.13060077839896 / Reduced Chi^2                                  
+LOGFILE = 'outputs/NGC0787_ss.galfit.01' / Output logfile                       
+COMMENT =============================================                           
+COMMENT                                                                         
+
+
+***** FRAME 05 *****
+XTENSION= 'IMAGE   '           / IMAGE extension                                
+BITPIX  =                  -32 / number of bits per data pixel                  
+NAXIS   =                    2 / number of data axes                            
+NAXIS1  =                  611 / length of data axis 1                          
+NAXIS2  =                  441 / length of data axis 2                          
+PCOUNT  =                    0 / required keyword; must = 0                     
+GCOUNT  =                    1 / required keyword; must = 1                     
+OBJECT  = 'MODEL_r '           / Component type                                 
+EXTNAME = 'MODEL_r '           / Extension name                                 
+COMMENT ========== GALFIT Input Parameters ==========                           
+INITFILE= 'galfit.feedme'      / GALFIT input file                              
+BANDS   = 'g,r,i   '           / Band labels                                    
+WL_G    =                4770. / Band wavelength                                
+DATAIN_G= 'NGC0787_g.fits'     / Input data image                               
+SIGMA_G = 'none    '           / Input sigma image                              
+PSF_G   = 'psf_NGC0787_g.fits ' / Convolution PSF and kernel                    
+MASK_G  = 'none    '           / Input mask image                               
+MAGZPT_G=                25.11 / Magnitude zeropoint                            
+WL_R    =                6231. / Band wavelength                                
+DATAIN_R= 'NGC0787_r.fits'     / Input data image                               
+SIGMA_R = 'none    '           / Input sigma image                              
+PSF_R   = 'psf_NGC0787_r.fits ' / Convolution PSF and kernel                    
+MASK_R  = 'none    '           / Input mask image                               
+MAGZPT_R=                 24.8 / Magnitude zeropoint                            
+WL_I    =                7625. / Band wavelength                                
+DATAIN_I= 'NGC0787_i.fits'     / Input data image                               
+SIGMA_I = 'none    '           / Input sigma image                              
+PSF_I   = 'psf_NGC0787_i.fits ' / Convolution PSF and kernel                    
+MASK_I  = 'none    '           / Input mask image                               
+MAGZPT_I=                24.36 / Magnitude zeropoint                            
+CONSTRNT= 'none    '           / Parameter constraint file                      
+FITSECT = '[1:551,1:441]'      / Image section fitted                           
+CONVBOX = '200, 200'           / Convolution box size                           
+MINSIGMA=                   0. / Min. sigma factor                              
+NITER   =                   28 / Number of iterations                           
+FIRSTCON=                   -1 / First constrained iteration                    
+LASTCON =                   -1 / Last constrained iteration                     
+COMMENT ========== GALFIT Final Parameters ==========                           
+COMP_1  = 'sky     '           / Component type                                 
+1_XC_0  = '[276.0000]'         / X center [pixel]                               
+1_YC_0  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_0 = '[1.4527]'           / Sky background [ADUs]                          
+1_XC_1  = '[276.0000]'         / X center [pixel]                               
+1_YC_1  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_1 = '[0.3027]'           / Sky background [ADUs]                          
+1_XC_2  = '[276.0000]'         / X center [pixel]                               
+1_YC_2  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_2 = '[0.4892]'           / Sky background [ADUs]                          
+1_DSDX_0= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_1= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_2= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDY_0= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_1= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_2= '[0.000e+00]'        / y sky gradient [ADUs]                          
+COMMENT ------------------------------------------------------------------------
+COMP_2  = 'sersic  '           / Component type                                 
+2_XC_0  = '303.9614 +/- 0.0027' / X center [pixel]                              
+2_XC_1  = '[-20.1985]'         / X center [pixel]                               
+2_XC_2  = '[-10.4689]'         / X center [pixel]                               
+2_YC_0  = '242.9569 +/- 0.0032' / Y center [pixel]                              
+2_YC_1  = '[-3.5065]'          / Y center [pixel]                               
+2_YC_2  = '[-22.0728]'         / Y center [pixel]                               
+2_MAG_0 = '13.0122 +/- 0.0006' / Integrated magnitude [mag]                     
+2_MAG_1 = '-0.7158 +/- 0.0016' / Integrated magnitude [mag]                     
+2_MAG_2 = '0.0505 +/- 0.0005'  / Integrated magnitude [mag]                     
+2_RE_0  = '57.0983 +/- 0.0603' / Effective radius Re [pixels]                   
+2_RE_1  = '3.2773 +/- 0.1700'  / Effective radius Re [pixels]                   
+2_RE_2  = '[0.000e+00]'        / Effective radius Re [pixels]                   
+2_N_0   = '3.8559 +/- 0.0025'  / Sersic index                                   
+2_N_1   = '0.5735 +/- 0.0072'  / Sersic index                                   
+2_N_2   = '[0.000e+00]'        / Sersic index                                   
+2_AR_0  = '0.8013 +/- 0.0003'  / Axis ratio (b/a)                               
+2_AR_1  = '[3.701e-17]'        / Axis ratio (b/a)                               
+2_AR_2  = '[7.401e-17]'        / Axis ratio (b/a)                               
+2_PA_0  = '-2.5135 +/- 0.0638' / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_1  = '[0.000e+00]'        / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_2  = '[0.000e+00]'        / Position Angle (PA) [degrees: Up=0, Left=90]   
+COMMENT ------------------------------------------------------------------------
+FLAGS   = 'A-6 H-3 H-4 A-3 A-4 I-2 A-5 2 2 ' / See `galfit -help' for details.  
+COMMENT ------------------------------------------------------------------------
+1_XC_G  = '[276.0000]'         / X center [pixel]                               
+1_YC_G  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_G = '[1.6391]'           / Sky background [ADUs]                          
+1_XC_R  = '[276.0000]'         / X center [pixel]                               
+1_YC_R  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_R = '[0.9711]'           / Sky background [ADUs]                          
+1_XC_I  = '[276.0000]'         / X center [pixel]                               
+1_YC_I  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_I = '[2.2446]'           / Sky background [ADUs]                          
+1_DSDX_G= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_R= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_I= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDY_G= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_R= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_I= '[0.000e+00]'        / y sky gradient [ADUs]                          
+COMMENT ------------------------------------------------------------------------
+2_XC_G  = '313.6911 +/- 0.0055' / X center [pixel]                              
+2_XC_R  = '313.9448 +/- 0.0055' / X center [pixel]                              
+2_XC_I  = '273.2941 +/- 0.0055' / X center [pixel]                              
+2_YC_G  = '224.3907 +/- 0.0063' / Y center [pixel]                              
+2_YC_R  = '264.9231 +/- 0.0063' / Y center [pixel]                              
+2_YC_I  = '217.3777 +/- 0.0063' / Y center [pixel]                              
+2_MAG_G = '13.7785 +/- 0.0020' / Integrated magnitude [mag]                     
+2_MAG_R = '12.9450 +/- 0.0013' / Integrated magnitude [mag]                     
+2_MAG_I = '12.3470 +/- 0.0020' / Integrated magnitude [mag]                     
+2_RE_G  = '53.8210 +/- 0.1827' / Effective radius Re [pixels]                   
+2_RE_R  = '57.1752 +/- 0.1217' / Effective radius Re [pixels]                   
+2_RE_I  = '60.3756 +/- 0.2314' / Effective radius Re [pixels]                   
+2_N_G   = '3.2823 +/- 0.0083'  / Sersic index                                   
+2_N_R   = '3.8693 +/- 0.0051'  / Sersic index                                   
+2_N_I   = '4.4294 +/- 0.0093'  / Sersic index                                   
+2_AR_G  = '0.8013 +/- 0.0006'  / Axis ratio (b/a)                               
+2_AR_R  = '0.8013 +/- 0.0006'  / Axis ratio (b/a)                               
+2_AR_I  = '0.8013 +/- 0.0006'  / Axis ratio (b/a)                               
+2_PA_G  = '-2.5135 +/- 0.1276' / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_R  = '-2.5135 +/- 0.1276' / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_I  = '-2.5135 +/- 0.1276' / Position Angle (PA) [degrees: Up=0, Left=90]   
+COMMENT ------------------------------------------------------------------------
+COMMENT ------------------------------------------------------------------------
+VERSION = 'galfitm-1.2.1'      / galfitm version                                
+CHISQ   =     883996.397816135 / Chi^2 of fit                                   
+NDOF    =               781882 / Degrees of freedom                             
+NFREE   =                   11 / Number of free parameters                      
+NFIX    =                   19 / Number of fixed parameters                     
+CHI2NU  =     1.13060077839896 / Reduced Chi^2                                  
+LOGFILE = 'outputs/NGC0787_ss.galfit.01' / Output logfile                       
+COMMENT =============================================                           
+COMMENT                                                                         
+
+
+***** FRAME 06 *****
+XTENSION= 'IMAGE   '           / IMAGE extension                                
+BITPIX  =                  -32 / number of bits per data pixel                  
+NAXIS   =                    2 / number of data axes                            
+NAXIS1  =                  551 / length of data axis 1                          
+NAXIS2  =                  441 / length of data axis 2                          
+PCOUNT  =                    0 / required keyword; must = 0                     
+GCOUNT  =                    1 / required keyword; must = 1                     
+OBJECT  = 'MODEL_i '           / Component type                                 
+EXTNAME = 'MODEL_i '           / Extension name                                 
+COMMENT ========== GALFIT Input Parameters ==========                           
+INITFILE= 'galfit.feedme'      / GALFIT input file                              
+BANDS   = 'g,r,i   '           / Band labels                                    
+WL_G    =                4770. / Band wavelength                                
+DATAIN_G= 'NGC0787_g.fits'     / Input data image                               
+SIGMA_G = 'none    '           / Input sigma image                              
+PSF_G   = 'psf_NGC0787_g.fits ' / Convolution PSF and kernel                    
+MASK_G  = 'none    '           / Input mask image                               
+MAGZPT_G=                25.11 / Magnitude zeropoint                            
+WL_R    =                6231. / Band wavelength                                
+DATAIN_R= 'NGC0787_r.fits'     / Input data image                               
+SIGMA_R = 'none    '           / Input sigma image                              
+PSF_R   = 'psf_NGC0787_r.fits ' / Convolution PSF and kernel                    
+MASK_R  = 'none    '           / Input mask image                               
+MAGZPT_R=                 24.8 / Magnitude zeropoint                            
+WL_I    =                7625. / Band wavelength                                
+DATAIN_I= 'NGC0787_i.fits'     / Input data image                               
+SIGMA_I = 'none    '           / Input sigma image                              
+PSF_I   = 'psf_NGC0787_i.fits ' / Convolution PSF and kernel                    
+MASK_I  = 'none    '           / Input mask image                               
+MAGZPT_I=                24.36 / Magnitude zeropoint                            
+CONSTRNT= 'none    '           / Parameter constraint file                      
+FITSECT = '[1:551,1:441]'      / Image section fitted                           
+CONVBOX = '200, 200'           / Convolution box size                           
+MINSIGMA=                   0. / Min. sigma factor                              
+NITER   =                   28 / Number of iterations                           
+FIRSTCON=                   -1 / First constrained iteration                    
+LASTCON =                   -1 / Last constrained iteration                     
+COMMENT ========== GALFIT Final Parameters ==========                           
+COMP_1  = 'sky     '           / Component type                                 
+1_XC_0  = '[276.0000]'         / X center [pixel]                               
+1_YC_0  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_0 = '[1.4527]'           / Sky background [ADUs]                          
+1_XC_1  = '[276.0000]'         / X center [pixel]                               
+1_YC_1  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_1 = '[0.3027]'           / Sky background [ADUs]                          
+1_XC_2  = '[276.0000]'         / X center [pixel]                               
+1_YC_2  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_2 = '[0.4892]'           / Sky background [ADUs]                          
+1_DSDX_0= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_1= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_2= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDY_0= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_1= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_2= '[0.000e+00]'        / y sky gradient [ADUs]                          
+COMMENT ------------------------------------------------------------------------
+COMP_2  = 'sersic  '           / Component type                                 
+2_XC_0  = '303.9614 +/- 0.0027' / X center [pixel]                              
+2_XC_1  = '[-20.1985]'         / X center [pixel]                               
+2_XC_2  = '[-10.4689]'         / X center [pixel]                               
+2_YC_0  = '242.9569 +/- 0.0032' / Y center [pixel]                              
+2_YC_1  = '[-3.5065]'          / Y center [pixel]                               
+2_YC_2  = '[-22.0728]'         / Y center [pixel]                               
+2_MAG_0 = '13.0122 +/- 0.0006' / Integrated magnitude [mag]                     
+2_MAG_1 = '-0.7158 +/- 0.0016' / Integrated magnitude [mag]                     
+2_MAG_2 = '0.0505 +/- 0.0005'  / Integrated magnitude [mag]                     
+2_RE_0  = '57.0983 +/- 0.0603' / Effective radius Re [pixels]                   
+2_RE_1  = '3.2773 +/- 0.1700'  / Effective radius Re [pixels]                   
+2_RE_2  = '[0.000e+00]'        / Effective radius Re [pixels]                   
+2_N_0   = '3.8559 +/- 0.0025'  / Sersic index                                   
+2_N_1   = '0.5735 +/- 0.0072'  / Sersic index                                   
+2_N_2   = '[0.000e+00]'        / Sersic index                                   
+2_AR_0  = '0.8013 +/- 0.0003'  / Axis ratio (b/a)                               
+2_AR_1  = '[3.701e-17]'        / Axis ratio (b/a)                               
+2_AR_2  = '[7.401e-17]'        / Axis ratio (b/a)                               
+2_PA_0  = '-2.5135 +/- 0.0638' / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_1  = '[0.000e+00]'        / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_2  = '[0.000e+00]'        / Position Angle (PA) [degrees: Up=0, Left=90]   
+COMMENT ------------------------------------------------------------------------
+FLAGS   = 'A-6 H-3 H-4 A-3 A-4 I-2 A-5 2 2 2 ' / See `galfit -help' for details.
+COMMENT ------------------------------------------------------------------------
+1_XC_G  = '[276.0000]'         / X center [pixel]                               
+1_YC_G  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_G = '[1.6391]'           / Sky background [ADUs]                          
+1_XC_R  = '[276.0000]'         / X center [pixel]                               
+1_YC_R  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_R = '[0.9711]'           / Sky background [ADUs]                          
+1_XC_I  = '[276.0000]'         / X center [pixel]                               
+1_YC_I  = '[221.0000]'         / Y center [pixel]                               
+1_SKY_I = '[2.2446]'           / Sky background [ADUs]                          
+1_DSDX_G= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_R= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDX_I= '[0.000e+00]'        / x sky gradient [ADUs]                          
+1_DSDY_G= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_R= '[0.000e+00]'        / y sky gradient [ADUs]                          
+1_DSDY_I= '[0.000e+00]'        / y sky gradient [ADUs]                          
+COMMENT ------------------------------------------------------------------------
+2_XC_G  = '313.6911 +/- 0.0055' / X center [pixel]                              
+2_XC_R  = '313.9448 +/- 0.0055' / X center [pixel]                              
+2_XC_I  = '273.2941 +/- 0.0055' / X center [pixel]                              
+2_YC_G  = '224.3907 +/- 0.0063' / Y center [pixel]                              
+2_YC_R  = '264.9231 +/- 0.0063' / Y center [pixel]                              
+2_YC_I  = '217.3777 +/- 0.0063' / Y center [pixel]                              
+2_MAG_G = '13.7785 +/- 0.0020' / Integrated magnitude [mag]                     
+2_MAG_R = '12.9450 +/- 0.0013' / Integrated magnitude [mag]                     
+2_MAG_I = '12.3470 +/- 0.0020' / Integrated magnitude [mag]                     
+2_RE_G  = '53.8210 +/- 0.1827' / Effective radius Re [pixels]                   
+2_RE_R  = '57.1752 +/- 0.1217' / Effective radius Re [pixels]                   
+2_RE_I  = '60.3756 +/- 0.2314' / Effective radius Re [pixels]                   
+2_N_G   = '3.2823 +/- 0.0083'  / Sersic index                                   
+2_N_R   = '3.8693 +/- 0.0051'  / Sersic index                                   
+2_N_I   = '4.4294 +/- 0.0093'  / Sersic index                                   
+2_AR_G  = '0.8013 +/- 0.0006'  / Axis ratio (b/a)                               
+2_AR_R  = '0.8013 +/- 0.0006'  / Axis ratio (b/a)                               
+2_AR_I  = '0.8013 +/- 0.0006'  / Axis ratio (b/a)                               
+2_PA_G  = '-2.5135 +/- 0.1276' / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_R  = '-2.5135 +/- 0.1276' / Position Angle (PA) [degrees: Up=0, Left=90]   
+2_PA_I  = '-2.5135 +/- 0.1276' / Position Angle (PA) [degrees: Up=0, Left=90]   
+COMMENT ------------------------------------------------------------------------
+COMMENT ------------------------------------------------------------------------
+VERSION = 'galfitm-1.2.1'      / galfitm version                                
+CHISQ   =     883996.397816135 / Chi^2 of fit                                   
+NDOF    =               781882 / Degrees of freedom                             
+NFREE   =                   11 / Number of free parameters                      
+NFIX    =                   19 / Number of fixed parameters                     
+CHI2NU  =     1.13060077839896 / Reduced Chi^2                                  
+LOGFILE = 'outputs/NGC0787_ss.galfit.01' / Output logfile                       
+COMMENT =============================================                           
+COMMENT                                                                         
+
+
+***** FRAME 07 *****
+XTENSION= 'IMAGE   '           / IMAGE extension                                
+BITPIX  =                  -32 / number of bits per data pixel                  
+NAXIS   =                    2 / number of data axes                            
+NAXIS1  =                  611 / length of data axis 1                          
+NAXIS2  =                  441 / length of data axis 2                          
+PCOUNT  =                    0 / required keyword; must = 0                     
+GCOUNT  =                    1 / required keyword; must = 1                     
+OBJECT  = 'RESIDUAL_g'         / Component type                                 
+EXTNAME = 'RESIDUAL_g'         / Extension name                                 
+
+
+***** FRAME 08 *****
+XTENSION= 'IMAGE   '           / IMAGE extension                                
+BITPIX  =                  -32 / number of bits per data pixel                  
+NAXIS   =                    2 / number of data axes                            
+NAXIS1  =                  611 / length of data axis 1                          
+NAXIS2  =                  441 / length of data axis 2                          
+PCOUNT  =                    0 / required keyword; must = 0                     
+GCOUNT  =                    1 / required keyword; must = 1                     
+OBJECT  = 'RESIDUAL_r'         / Component type                                 
+EXTNAME = 'RESIDUAL_r'         / Extension name                                 
+
+
+***** FRAME 09 *****
+XTENSION= 'IMAGE   '           / IMAGE extension                                
+BITPIX  =                  -32 / number of bits per data pixel                  
+NAXIS   =                    2 / number of data axes                            
+NAXIS1  =                  551 / length of data axis 1                          
+NAXIS2  =                  441 / length of data axis 2                          
+PCOUNT  =                    0 / required keyword; must = 0                     
+GCOUNT  =                    1 / required keyword; must = 1                     
+OBJECT  = 'RESIDUAL_i'         / Component type                                 
+EXTNAME = 'RESIDUAL_i'         / Extension name                                 
+
+
+***** FRAME 10 *****
+XTENSION= 'BINTABLE'           / binary table extension                         
+BITPIX  =                    8 / 8-bit bytes                                    
+NAXIS   =                    2 / 2-dimensional binary table                     
+NAXIS1  =                 3266 / width of table in bytes                        
+NAXIS2  =                    1 / number of rows in table                        
+PCOUNT  =                    0 / size of special data area                      
+GCOUNT  =                    1 / one data group (required keyword)              
+TFIELDS =                   25 / number of fields in each row                   
+EXTNAME = 'FIT_INFO'           / name of this binary table extension            
+TTYPE1  = 'VERSION '           / label for field                                
+TFORM1  = '33A     '           / format of field                                
+TTYPE2  = 'INITFILE'           / label for field                                
+TFORM2  = '514A    '           / format of field                                
+TTYPE3  = 'CONSTRNT'           / label for field                                
+TFORM3  = '514A    '           / format of field                                
+TTYPE4  = 'FITSECT '           / label for field                                
+TFORM4  = '514A    '           / format of field                                
+TTYPE5  = 'CONVBOX '           / label for field                                
+TFORM5  = '514A    '           / format of field                                
+TTYPE6  = 'KERNEL  '           / label for field                                
+TFORM6  = '514A    '           / format of field                                
+TTYPE7  = 'MINSIGMA'           / label for field                                
+TFORM7  = 'E       '           / format of field                                
+TTYPE8  = 'NITER   '           / label for field                                
+TFORM8  = 'J       '           / format of field                                
+TTYPE9  = 'FIRSTCON'           / label for field                                
+TFORM9  = 'J       '           / format of field                                
+TTYPE10 = 'LASTCON '           / label for field                                
+TFORM10 = 'J       '           / format of field                                
+TTYPE11 = 'NDOF    '           / label for field                                
+TFORM11 = 'J       '           / format of field                                
+TTYPE12 = 'NFREE   '           / label for field                                
+TFORM12 = 'J       '           / format of field                                
+TTYPE13 = 'NFIX    '           / label for field                                
+TFORM13 = 'J       '           / format of field                                
+TTYPE14 = 'NDATA   '           / label for field                                
+TFORM14 = 'J       '           / format of field                                
+TTYPE15 = 'NMASK   '           / label for field                                
+TFORM15 = 'J       '           / format of field                                
+TTYPE16 = 'REFWLBAND'          / label for field                                
+TFORM16 = 'E       '           / format of field                                
+TTYPE17 = 'LOWDWLBAND'         / label for field                                
+TFORM17 = 'E       '           / format of field                                
+TTYPE18 = 'HIGHDWLBAND'        / label for field                                
+TFORM18 = 'E       '           / format of field                                
+TTYPE19 = 'CPUTIME_SETUP'      / label for field                                
+TFORM19 = 'E       '           / format of field                                
+TTYPE20 = 'CPUTIME_FIT'        / label for field                                
+TFORM20 = 'E       '           / format of field                                
+TTYPE21 = 'CPUTIME_TOTAL'      / label for field                                
+TFORM21 = 'E       '           / format of field                                
+TTYPE22 = 'CHISQ   '           / label for field                                
+TFORM22 = 'E       '           / format of field                                
+TTYPE23 = 'CHI2NU  '           / label for field                                
+TFORM23 = 'E       '           / format of field                                
+TTYPE24 = 'LOGFILE '           / label for field                                
+TFORM24 = '514A    '           / format of field                                
+TTYPE25 = 'FLAGS   '           / label for field                                
+TFORM25 = '81A     '           / format of field                                
+
+
+***** FRAME 11 *****
+XTENSION= 'BINTABLE'           / binary table extension                         
+BITPIX  =                    8 / 8-bit bytes                                    
+NAXIS   =                    2 / 2-dimensional binary table                     
+NAXIS1  =                 2602 / width of table in bytes                        
+NAXIS2  =                    3 / number of rows in table                        
+PCOUNT  =                    0 / size of special data area                      
+GCOUNT  =                    1 / one data group (required keyword)              
+TFIELDS =                   13 / number of fields in each row                   
+EXTNAME = 'BAND_INFO'          / name of this binary table extension            
+TTYPE1  = 'BAND    '           / label for field                                
+TFORM1  = '514A    '           / format of field                                
+TTYPE2  = 'WL      '           / label for field                                
+TFORM2  = 'E       '           / format of field                                
+TTYPE3  = 'DATAIN  '           / label for field                                
+TFORM3  = '514A    '           / format of field                                
+TTYPE4  = 'SIGMA   '           / label for field                                
+TFORM4  = '514A    '           / format of field                                
+TTYPE5  = 'PSF     '           / label for field                                
+TFORM5  = '514A    '           / format of field                                
+TTYPE6  = 'MASK    '           / label for field                                
+TFORM6  = '514A    '           / format of field                                
+TTYPE7  = 'MAGZPT  '           / label for field                                
+TFORM7  = 'E       '           / format of field                                
+TTYPE8  = 'DWL     '           / label for field                                
+TFORM8  = 'E       '           / format of field                                
+TTYPE9  = 'DPDQ0   '           / label for field                                
+TFORM9  = 'E       '           / format of field                                
+TTYPE10 = 'DPDQ1   '           / label for field                                
+TFORM10 = 'E       '           / format of field                                
+TTYPE11 = 'DPDQ2   '           / label for field                                
+TFORM11 = 'E       '           / format of field                                
+TTYPE12 = 'NGOOD   '           / label for field                                
+TFORM12 = 'J       '           / format of field                                
+TTYPE13 = 'NMASK   '           / label for field                                
+TFORM13 = 'J       '           / format of field                                
+
+
+***** FRAME 12 *****
+XTENSION= 'BINTABLE'           / binary table extension                         
+BITPIX  =                    8 / 8-bit bytes                                    
+NAXIS   =                    2 / 2-dimensional binary table                     
+NAXIS1  =                  161 / width of table in bytes                        
+NAXIS2  =                    3 / number of rows in table                        
+PCOUNT  =                    0 / size of special data area                      
+GCOUNT  =                    1 / one data group (required keyword)              
+TFIELDS =                   37 / number of fields in each row                   
+EXTNAME = 'FINAL_BAND'         / name of this binary table extension            
+TTYPE1  = 'BAND    '           / label for field                                
+TFORM1  = '17A     '           / format of field                                
+TTYPE2  = 'COMP1_XC'           / label for field                                
+TFORM2  = 'E       '           / format of field                                
+TTYPE3  = 'COMP1_XC_ERR'       / label for field                                
+TFORM3  = 'E       '           / format of field                                
+TTYPE4  = 'COMP1_XC_FIT'       / label for field                                
+TFORM4  = 'J       '           / format of field                                
+TTYPE5  = 'COMP1_YC'           / label for field                                
+TFORM5  = 'E       '           / format of field                                
+TTYPE6  = 'COMP1_YC_ERR'       / label for field                                
+TFORM6  = 'E       '           / format of field                                
+TTYPE7  = 'COMP1_YC_FIT'       / label for field                                
+TFORM7  = 'J       '           / format of field                                
+TTYPE8  = 'COMP1_SKY'          / label for field                                
+TFORM8  = 'E       '           / format of field                                
+TTYPE9  = 'COMP1_SKY_ERR'      / label for field                                
+TFORM9  = 'E       '           / format of field                                
+TTYPE10 = 'COMP1_SKY_FIT'      / label for field                                
+TFORM10 = 'J       '           / format of field                                
+TTYPE11 = 'COMP1_DSDX'         / label for field                                
+TFORM11 = 'E       '           / format of field                                
+TTYPE12 = 'COMP1_DSDX_ERR'     / label for field                                
+TFORM12 = 'E       '           / format of field                                
+TTYPE13 = 'COMP1_DSDX_FIT'     / label for field                                
+TFORM13 = 'J       '           / format of field                                
+TTYPE14 = 'COMP1_DSDY'         / label for field                                
+TFORM14 = 'E       '           / format of field                                
+TTYPE15 = 'COMP1_DSDY_ERR'     / label for field                                
+TFORM15 = 'E       '           / format of field                                
+TTYPE16 = 'COMP1_DSDY_FIT'     / label for field                                
+TFORM16 = 'J       '           / format of field                                
+TTYPE17 = 'COMP2_XC'           / label for field                                
+TFORM17 = 'E       '           / format of field                                
+TTYPE18 = 'COMP2_XC_ERR'       / label for field                                
+TFORM18 = 'E       '           / format of field                                
+TTYPE19 = 'COMP2_XC_FIT'       / label for field                                
+TFORM19 = 'J       '           / format of field                                
+TTYPE20 = 'COMP2_YC'           / label for field                                
+TFORM20 = 'E       '           / format of field                                
+TTYPE21 = 'COMP2_YC_ERR'       / label for field                                
+TFORM21 = 'E       '           / format of field                                
+TTYPE22 = 'COMP2_YC_FIT'       / label for field                                
+TFORM22 = 'J       '           / format of field                                
+TTYPE23 = 'COMP2_MAG'          / label for field                                
+TFORM23 = 'E       '           / format of field                                
+TTYPE24 = 'COMP2_MAG_ERR'      / label for field                                
+TFORM24 = 'E       '           / format of field                                
+TTYPE25 = 'COMP2_MAG_FIT'      / label for field                                
+TFORM25 = 'J       '           / format of field                                
+TTYPE26 = 'COMP2_Re'           / label for field                                
+TFORM26 = 'E       '           / format of field                                
+TTYPE27 = 'COMP2_Re_ERR'       / label for field                                
+TFORM27 = 'E       '           / format of field                                
+TTYPE28 = 'COMP2_Re_FIT'       / label for field                                
+TFORM28 = 'J       '           / format of field                                
+TTYPE29 = 'COMP2_n '           / label for field                                
+TFORM29 = 'E       '           / format of field                                
+TTYPE30 = 'COMP2_n_ERR'        / label for field                                
+TFORM30 = 'E       '           / format of field                                
+TTYPE31 = 'COMP2_n_FIT'        / label for field                                
+TFORM31 = 'J       '           / format of field                                
+TTYPE32 = 'COMP2_AR'           / label for field                                
+TFORM32 = 'E       '           / format of field                                
+TTYPE33 = 'COMP2_AR_ERR'       / label for field                                
+TFORM33 = 'E       '           / format of field                                
+TTYPE34 = 'COMP2_AR_FIT'       / label for field                                
+TFORM34 = 'J       '           / format of field                                
+TTYPE35 = 'COMP2_PA'           / label for field                                
+TFORM35 = 'E       '           / format of field                                
+TTYPE36 = 'COMP2_PA_ERR'       / label for field                                
+TFORM36 = 'E       '           / format of field                                
+TTYPE37 = 'COMP2_PA_FIT'       / label for field                                
+TFORM37 = 'J       '           / format of field                                
+
+
+***** FRAME 13 *****
+XTENSION= 'BINTABLE'           / binary table extension                         
+BITPIX  =                    8 / 8-bit bytes                                    
+NAXIS   =                    2 / 2-dimensional binary table                     
+NAXIS1  =                  148 / width of table in bytes                        
+NAXIS2  =                    3 / number of rows in table                        
+PCOUNT  =                    0 / size of special data area                      
+GCOUNT  =                    1 / one data group (required keyword)              
+TFIELDS =                   37 / number of fields in each row                   
+EXTNAME = 'FINAL_CHEB'         / name of this binary table extension            
+TTYPE1  = 'CHEB_ORDER'         / label for field                                
+TFORM1  = 'J       '           / format of field                                
+TTYPE2  = 'COMP1_XC'           / label for field                                
+TFORM2  = 'E       '           / format of field                                
+TTYPE3  = 'COMP1_XC_ERR'       / label for field                                
+TFORM3  = 'E       '           / format of field                                
+TTYPE4  = 'COMP1_XC_FIT'       / label for field                                
+TFORM4  = 'J       '           / format of field                                
+TTYPE5  = 'COMP1_YC'           / label for field                                
+TFORM5  = 'E       '           / format of field                                
+TTYPE6  = 'COMP1_YC_ERR'       / label for field                                
+TFORM6  = 'E       '           / format of field                                
+TTYPE7  = 'COMP1_YC_FIT'       / label for field                                
+TFORM7  = 'J       '           / format of field                                
+TTYPE8  = 'COMP1_SKY'          / label for field                                
+TFORM8  = 'E       '           / format of field                                
+TTYPE9  = 'COMP1_SKY_ERR'      / label for field                                
+TFORM9  = 'E       '           / format of field                                
+TTYPE10 = 'COMP1_SKY_FIT'      / label for field                                
+TFORM10 = 'J       '           / format of field                                
+TTYPE11 = 'COMP1_DSDX'         / label for field                                
+TFORM11 = 'E       '           / format of field                                
+TTYPE12 = 'COMP1_DSDX_ERR'     / label for field                                
+TFORM12 = 'E       '           / format of field                                
+TTYPE13 = 'COMP1_DSDX_FIT'     / label for field                                
+TFORM13 = 'J       '           / format of field                                
+TTYPE14 = 'COMP1_DSDY'         / label for field                                
+TFORM14 = 'E       '           / format of field                                
+TTYPE15 = 'COMP1_DSDY_ERR'     / label for field                                
+TFORM15 = 'E       '           / format of field                                
+TTYPE16 = 'COMP1_DSDY_FIT'     / label for field                                
+TFORM16 = 'J       '           / format of field                                
+TTYPE17 = 'COMP2_XC'           / label for field                                
+TFORM17 = 'E       '           / format of field                                
+TTYPE18 = 'COMP2_XC_ERR'       / label for field                                
+TFORM18 = 'E       '           / format of field                                
+TTYPE19 = 'COMP2_XC_FIT'       / label for field                                
+TFORM19 = 'J       '           / format of field                                
+TTYPE20 = 'COMP2_YC'           / label for field                                
+TFORM20 = 'E       '           / format of field                                
+TTYPE21 = 'COMP2_YC_ERR'       / label for field                                
+TFORM21 = 'E       '           / format of field                                
+TTYPE22 = 'COMP2_YC_FIT'       / label for field                                
+TFORM22 = 'J       '           / format of field                                
+TTYPE23 = 'COMP2_MAG'          / label for field                                
+TFORM23 = 'E       '           / format of field                                
+TTYPE24 = 'COMP2_MAG_ERR'      / label for field                                
+TFORM24 = 'E       '           / format of field                                
+TTYPE25 = 'COMP2_MAG_FIT'      / label for field                                
+TFORM25 = 'J       '           / format of field                                
+TTYPE26 = 'COMP2_Re'           / label for field                                
+TFORM26 = 'E       '           / format of field                                
+TTYPE27 = 'COMP2_Re_ERR'       / label for field                                
+TFORM27 = 'E       '           / format of field                                
+TTYPE28 = 'COMP2_Re_FIT'       / label for field                                
+TFORM28 = 'J       '           / format of field                                
+TTYPE29 = 'COMP2_n '           / label for field                                
+TFORM29 = 'E       '           / format of field                                
+TTYPE30 = 'COMP2_n_ERR'        / label for field                                
+TFORM30 = 'E       '           / format of field                                
+TTYPE31 = 'COMP2_n_FIT'        / label for field                                
+TFORM31 = 'J       '           / format of field                                
+TTYPE32 = 'COMP2_AR'           / label for field                                
+TFORM32 = 'E       '           / format of field                                
+TTYPE33 = 'COMP2_AR_ERR'       / label for field                                
+TFORM33 = 'E       '           / format of field                                
+TTYPE34 = 'COMP2_AR_FIT'       / label for field                                
+TFORM34 = 'J       '           / format of field                                
+TTYPE35 = 'COMP2_PA'           / label for field                                
+TFORM35 = 'E       '           / format of field                                
+TTYPE36 = 'COMP2_PA_ERR'       / label for field                                
+TFORM36 = 'E       '           / format of field                                
+TTYPE37 = 'COMP2_PA_FIT'       / label for field                                
+TFORM37 = 'J       '           / format of field                                

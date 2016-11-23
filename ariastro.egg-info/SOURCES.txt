@@ -1,0 +1,15 @@
+setup.py
+ariastro/__init__.py
+ariastro/library.py
+ariastro.egg-info/PKG-INFO
+ariastro.egg-info/SOURCES.txt
+ariastro.egg-info/dependency_links.txt
+ariastro.egg-info/requires.txt
+ariastro.egg-info/top_level.txt
+scripts/__init__.py
+scripts/create-output-table.py
+scripts/dump-header.py
+scripts/galfitm-1.2.1-linux-x86_64
+scripts/process-all-fits.py
+scripts/test-load-jma-gri.py
+scripts/test-sth.py

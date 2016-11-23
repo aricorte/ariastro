@@ -1,0 +1,6 @@
+#running mw-MM on the new stamps
+#first copy all the files on all-fits
+#I will uploas these files in dropbox for Nina to see
+
+
+find . -iname "*fits" -exec cp "{}" /../all-fits \;

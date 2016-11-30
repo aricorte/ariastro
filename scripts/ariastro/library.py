@@ -108,10 +108,10 @@ def read_output(filename):
     """
 
 
-    fields_to_extract = ["2_XC_G", "2_XC_R", "2_XC_I", "2_YC_G", "2_YC_R", "2_YC_I", "2_MAG_G",
-                         "2_MAG_R", "2_MAG_I", "2_RE_G", "2_RE_R", "2_RE_I", "2_N_G", "2_N_R",
-                         "2_N_I", "2_AR_G", "2_AR_R", "2_AR_I", "2_PA_G", "2_PA_R", "2_PA_I",
-                         "1_SKY_0","1_SKY_1","1_SKY_2"]
+    fields_to_extract = ["2_XC_U", "2_XC_G", "2_XC_R", "2_XC_I","2_XC_Z","2_YC_U", "2_YC_G", "2_YC_R", "2_YC_I", "2_YC_Z", "2_MAG_U", "2_MAG_G",
+                         "2_MAG_R", "2_MAG_I", "2_MAG_Z", "2_RE_U", "2_RE_G", "2_RE_R", "2_RE_I", "2_RE_Z", "2_N_U", "2_N_G", "2_N_R",
+                         "2_N_I", "2_N_Z", "2_AR_U", "2_AR_G", "2_AR_R", "2_AR_I", "2_AR_Z", "2_PA_U", "2_PA_G", "2_PA_R", "2_PA_I", "2_PA_Z",
+                         "1_SKY_0","1_SKY_1","1_SKY_2","1_SKY_3","1_SKY_4"]
     hdulist = fits.open(filename)
     ret = OrderedDict()
     for name in fields_to_extract:
@@ -202,7 +202,15 @@ def read_output_chi2(filename):
         # we found the frame
 
         for desired_field in fields_to_extract_chi:
-            ret[desired_field] = str(data[desired_field])
+            temp = str(data[desired_field]).strip()
+
+            # removes brackets in case it is a number between brackets
+            if temp.startswith("["):
+                temp = temp[1:-1].strip()
+
+            ret[desired_field] = temp
+
+            # ret[desired_field] = str(data[desired_field])
 
     #print ret
     #if ret.startswith("["):

@@ -2,7 +2,7 @@
 
 import glob
 import os
-from ariastro.library import *
+from ariastro import *
 import sys
 
 

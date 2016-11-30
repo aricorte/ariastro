@@ -2,8 +2,9 @@
 
 import glob
 import os
-from ariastro.library import *
 import sys
+
+from ariastro import *
 
 
 def replace_pattern_in_template(template, pattern, str_replace):

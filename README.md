@@ -3,16 +3,21 @@
 ## Installation
 
 
+
 ### Set the path to `galfitm-1.2.1-linux-x86_64`
 
 ```shell
 cd /usr/local/bin
 sudo ln -s <path-to-galfit>/galfitm-1.2.1-linux-x86_64
+```
 
 ### Install `ariastro` package and scripts
 
 ```shell
+cd CALIFA/github
 sudo python setup.py develop
+cd scripts
+chmod +x *.py
 ```
 
 

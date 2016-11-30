@@ -1,3 +1,3 @@
-import ariastro.library
+from ariastro import library
 
-ariastro.library.create_output_table(".")
+library.create_output_table(".")

@@ -3,6 +3,6 @@
 This script should be probably run from the 'outputs' directory or similar
 """
 
-from ariastro.library import *
+from ariastro import *
 
 create_output_table(".")

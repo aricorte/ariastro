@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc1cddf5-b1ba-4a7b-be80-8c8c6ef3cf3b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ariastro/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/scripts/ariastro/library.py" afterPath="$PROJECT_DIR$/ariastro/library.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ariastro.egg-info/SOURCES.txt" afterPath="$PROJECT_DIR$/ariastro.egg-info/SOURCES.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ariastro.egg-info/top_level.txt" afterPath="$PROJECT_DIR$/ariastro.egg-info/top_level.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/#process-all-fits.py#" afterPath="$PROJECT_DIR$/scripts/#process-all-fits.py#" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/create-output-table.py" afterPath="$PROJECT_DIR$/scripts/create-output-table.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/dump-header.py" afterPath="$PROJECT_DIR$/scripts/dump-header.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/process-all-bd-fits.py" afterPath="$PROJECT_DIR$/scripts/process-all-bd-fits.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/process-all-bd-fits2.py" afterPath="$PROJECT_DIR$/scripts/process-all-bd-fits2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/process-all-fits.py" afterPath="$PROJECT_DIR$/scripts/process-all-fits.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/test-load-jma-gri.py" afterPath="$PROJECT_DIR$/scripts/test-load-jma-gri.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/test-sth.py" afterPath="$PROJECT_DIR$/scripts/test-sth.py" />
     </list>
     <ignored path="CALIFA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="library.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="library.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ariastro/library.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="307">
@@ -96,6 +82,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="585">
+                <caret line="39" column="118" selection-start-line="39" selection-start-column="118" selection-end-line="39" selection-end-column="118" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownFxPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ariastro/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -114,16 +116,6 @@
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test-load-jma-gri.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/test-load-jma-gri.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -160,7 +152,6 @@
         <option value="$PROJECT_DIR$/data/all-fits/all-gal.csv" />
         <option value="$PROJECT_DIR$/scripts/ariastro/library.py" />
         <option value="$PROJECT_DIR$/data/outputs/output-mega-califa.txt" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/scripts/test-load-jma-gri.py" />
         <option value="$PROJECT_DIR$/scripts/test-sth.py" />
         <option value="$PROJECT_DIR$/scripts/dump-header.py" />
@@ -171,6 +162,7 @@
         <option value="$PROJECT_DIR$/scripts/process-all-bd-fits.py" />
         <option value="$PROJECT_DIR$/scripts/process-all-bd-fits2.py" />
         <option value="$PROJECT_DIR$/scripts/process-all-fits.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -393,20 +385,6 @@
     <entry file="file://$PROJECT_DIR$/data/all-fits/test2.csv" />
     <entry file="file://$PROJECT_DIR$/data/all-fits/all-gal.csv" />
     <entry file="file://$PROJECT_DIR$/data/outputs/output-mega-califa.txt" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="240">
-            <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -511,6 +489,20 @@
           <caret line="114" column="4" selection-start-line="114" selection-start-column="3" selection-end-line="114" selection-end-column="4" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="585">
+            <caret line="39" column="118" selection-start-line="39" selection-start-column="118" selection-end-line="39" selection-end-column="118" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
       </provider>
     </entry>
   </component>

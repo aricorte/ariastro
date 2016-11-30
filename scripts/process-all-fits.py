@@ -8,9 +8,23 @@ import sys
 
 # # Definition of constants
 
+
+PROCESS_GALAXIES = False  # Simulation mode or fitting mode
 FEEDME_FILENAME = "galfit.feedme"
+TEMPLATE_FILENAME = "galfit.feedme.template"
 COMMAND = "./galfitm-1.2.1-linux-x86_64  " + FEEDME_FILENAME
 FILENAME_CSV_TABLE = "all-gal.csv"
+
+# Tries to figure out the output filename pattern from inside the template
+with open(TEMPLATE_FILENAME, "r") as file:
+    for line in file:
+        if line.startswith("B)"):
+            pieces = line.split(" ")
+            OUTPUT_PATTERN = pieces[1].strip()
+            print "Found output filename pattern: '{}'".format(OUTPUT_PATTERN)
+            if not "@@@@@@" in OUTPUT_PATTERN:
+                raise RuntimeError("Could not figure out output pattern, sorry, gotta find new solution for this")
+
 # PATH = "./all-fits"
 PATH = "."
 
@@ -29,6 +43,7 @@ def replace_pattern_in_template(template, pattern, str_replace):
 ff = glob.glob(os.path.join(PATH, "psf*.fits"))
 galaxy_names = []
 for f in ff:
+
     filename = os.path.basename(f)
     # print filename
     pieces = filename.split("_")
@@ -39,7 +54,7 @@ galaxy_names = list(set(galaxy_names))
 
 # # Reads some input data
 # template
-with open("galfit.feedme.template", "r") as file:
+with open(TEMPLATE_FILENAME, "r") as file:
     template = file.read()
 # Galaxy table in CSV format
 table = load_jma_gri(FILENAME_CSV_TABLE)
@@ -53,77 +68,104 @@ table = load_jma_gri(FILENAME_CSV_TABLE)
 # print(galaxy_names)
 # sys.exit()
 
+igal = 0
 
 for galaxy_name in galaxy_names:
     filename_test = os.path.join(PATH, galaxy_name + "_g.fits")
 
-    goes = True
+    # # Next is a series of tests to determine whether the galaxy will be **really** processed
+    # If it is decided that it will not, a 'continue' statement will skip to the beginning of the next 'for' iteration
+
+    # Test 0
+    output_filename = replace_pattern_in_template(OUTPUT_PATTERN, "@@@@@@", galaxy_name)
+    if os.path.isfile(output_filename):
+        print "**INFO**: output file '%s' already exists, skipping galaxy '%s' :)" % (output_filename, galaxy_name)
+        continue
+
+
+    # Test 1
     if not os.path.isfile(filename_test):
         print "**WARNING**: file '%s' not found, skipping galaxy '%s' :(" % (filename_test, galaxy_name)
-        goes = False
+        continue
 
-    if goes:
-        row = find_row_by_galaxy_name(table, galaxy_name)
+    row = find_row_by_galaxy_name(table, galaxy_name)
 
-        if not row:
-            print "**WARNING**: galaxy '%s' not found in table :(" % (galaxy_name,)
-            goes = False
+    # Test 2
+    if not row:
+        print "**WARNING**: galaxy '%s' not found in table :(" % (galaxy_name,)
+        continue
 
-    if goes:
-        columns_needed = ["x0Fit2D_u", "x0Fit2D_g", "x0Fit2D_r", "x0Fit2D_i", "x0Fit2D_z", "y0Fit2D_u", "y0Fit2D_g",
-                          "y0Fit2D_r", "y0Fit2D_i", "y0Fit2D_z", "skybg_u", "skybg_g",
-                          "skybg_r", "skybg_i", "skybg_z", "u", "g", "r", "i", "z"]
+    columns_needed = ["x0Fit2D_u", "x0Fit2D_g", "x0Fit2D_r", "x0Fit2D_i", "x0Fit2D_z", "y0Fit2D_u", "y0Fit2D_g",
+                      "y0Fit2D_r", "y0Fit2D_i", "y0Fit2D_z", "skybg_u", "skybg_g",
+                      "skybg_r", "skybg_i", "skybg_z", "u", "g", "r", "i", "z"]
 
-        for name in columns_needed:
-            if not row[name]:
-                print "**WARNING**: row '%s' is empty, cannot process galaxy '%s' :(" % (name, galaxy_name)
-                goes = False
-                # break
 
-    if goes:
-        width, height = get_dims(filename_test)
+    # Test 3
+    for name in columns_needed:
+        if not row[name]:
+            print "**WARNING**: row '%s' is empty, cannot process galaxy '%s' :(" % (name, galaxy_name)
+            continue
+            # break
 
-        row = find_row_by_galaxy_name(table, galaxy_name)
-        # except:
-        #    print "Could not find galaxy '%s' in table" % galaxy_name
 
-        if row:
+    width, height = get_dims(filename_test)
 
-            if False:
-                print("GONNA PROCESS GALAXY {}".format(galaxy_name))
-                continue
+    row = find_row_by_galaxy_name(table, galaxy_name)
 
-            contents = replace_pattern_in_template(template, "@@@@@@", galaxy_name)
-            contents = replace_pattern_in_template(contents, "WWWWWW", str(width))
-            contents = replace_pattern_in_template(contents, "HHHHHH", str(height))
-            contents = replace_pattern_in_template(contents, "XUXUXU", row["x0Fit2D_u"])
-            contents = replace_pattern_in_template(contents, "XGXGXG", row["x0Fit2D_g"])
-            contents = replace_pattern_in_template(contents, "XRXRXR", row["x0Fit2D_r"])
-            contents = replace_pattern_in_template(contents, "XIXIXI", row["x0Fit2D_i"])
-            contents = replace_pattern_in_template(contents, "XZXZXZ", row["x0Fit2D_z"])
-            contents = replace_pattern_in_template(contents, "YUYUYU", row["x0Fit2D_u"])
-            contents = replace_pattern_in_template(contents, "YGYGYG", row["y0Fit2D_g"])
-            contents = replace_pattern_in_template(contents, "YRYRYR", row["y0Fit2D_r"])
-            contents = replace_pattern_in_template(contents, "YIYIYI", row["y0Fit2D_i"])
-            contents = replace_pattern_in_template(contents, "YZYZYZ", row["x0Fit2D_z"])
-            contents = replace_pattern_in_template(contents, "BKGU", row["skybg_u"])
-            contents = replace_pattern_in_template(contents, "BKGG", row["skybg_g"])
-            contents = replace_pattern_in_template(contents, "BKGR", row["skybg_r"])
-            contents = replace_pattern_in_template(contents, "BKGI", row["skybg_i"])
-            contents = replace_pattern_in_template(contents, "BKGZ", row["skybg_z"])
-            contents = replace_pattern_in_template(contents, "MMAGU", row["u"])
-            contents = replace_pattern_in_template(contents, "MMAGG", row["g"])
-            contents = replace_pattern_in_template(contents, "MMAGR", row["r"])
-            contents = replace_pattern_in_template(contents, "MMAGI", row["i"])
-            contents = replace_pattern_in_template(contents, "MMAGZ", row["z"])
+    # Test 4
+    if not row:
+        continue
 
-            #        contents = replace_pattern_in_template(contents, "XXXXXX", str(float(width)/2))
-            #        contents = replace_pattern_in_template(contents, "YYYYYY", str(float(height)/2))
 
-            with open(FEEDME_FILENAME, "w") as file:
-                file.write(contents)
-            os.system(COMMAND)
-            #	break
+    # **If reached this point in the code it is because the galaxy will be processed**
+
+    # except:
+    #    print "Could not find galaxy '%s' in table" % galaxy_name
+
+
+    # If the following is put 'True', just pretends that galaxy will be processed, but does nothing
+
+    print("**Info**: GONNA PROCESS GALAXY {}".format(galaxy_name))
+    igal = igal +1
+
+    if not PROCESS_GALAXIES:
+        continue
+
+    contents = replace_pattern_in_template(template, "@@@@@@", galaxy_name)
+    contents = replace_pattern_in_template(contents, "WWWWWW", str(width))
+    contents = replace_pattern_in_template(contents, "HHHHHH", str(height))
+    contents = replace_pattern_in_template(contents, "XUXUXU", row["x0Fit2D_u"])
+    contents = replace_pattern_in_template(contents, "XGXGXG", row["x0Fit2D_g"])
+    contents = replace_pattern_in_template(contents, "XRXRXR", row["x0Fit2D_r"])
+    contents = replace_pattern_in_template(contents, "XIXIXI", row["x0Fit2D_i"])
+    contents = replace_pattern_in_template(contents, "XZXZXZ", row["x0Fit2D_z"])
+    contents = replace_pattern_in_template(contents, "YUYUYU", row["x0Fit2D_u"])
+    contents = replace_pattern_in_template(contents, "YGYGYG", row["y0Fit2D_g"])
+    contents = replace_pattern_in_template(contents, "YRYRYR", row["y0Fit2D_r"])
+    contents = replace_pattern_in_template(contents, "YIYIYI", row["y0Fit2D_i"])
+    contents = replace_pattern_in_template(contents, "YZYZYZ", row["x0Fit2D_z"])
+    contents = replace_pattern_in_template(contents, "BKGU", row["skybg_u"])
+    contents = replace_pattern_in_template(contents, "BKGG", row["skybg_g"])
+    contents = replace_pattern_in_template(contents, "BKGR", row["skybg_r"])
+    contents = replace_pattern_in_template(contents, "BKGI", row["skybg_i"])
+    contents = replace_pattern_in_template(contents, "BKGZ", row["skybg_z"])
+    contents = replace_pattern_in_template(contents, "MMAGU", row["u"])
+    contents = replace_pattern_in_template(contents, "MMAGG", row["g"])
+    contents = replace_pattern_in_template(contents, "MMAGR", row["r"])
+    contents = replace_pattern_in_template(contents, "MMAGI", row["i"])
+    contents = replace_pattern_in_template(contents, "MMAGZ", row["z"])
+
+    #        contents = replace_pattern_in_template(contents, "XXXXXX", str(float(width)/2))
+    #        contents = replace_pattern_in_template(contents, "YYYYYY", str(float(height)/2))
+
+
+    with open(FEEDME_FILENAME, "w") as file:
+        file.write(contents)
+
+    os.system(COMMAND)
+
+
+    #	break
 
 ##Read outputs from the SS fit
 # create_output_table("../outputs")
@@ -133,3 +175,4 @@ for galaxy_name in galaxy_names:
 
 #    pieces = os.path.basename(f)
 
+print "I fit", igal,"galaxies"

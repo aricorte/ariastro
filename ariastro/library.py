@@ -113,6 +113,7 @@ def read_output(filename):
                          "2_N_I", "2_N_Z", "2_AR_U", "2_AR_G", "2_AR_R", "2_AR_I", "2_AR_Z", "2_PA_U", "2_PA_G", "2_PA_R", "2_PA_I", "2_PA_Z",
                          "1_SKY_0","1_SKY_1","1_SKY_2","1_SKY_3","1_SKY_4"]
     hdulist = fits.open(filename)
+
     ret = OrderedDict()
     for name in fields_to_extract:
         expr = hdulist[7].header[name]
@@ -237,7 +238,13 @@ def create_output_table(dir_=".", output_filename="output-mega-califa.txt"):
     with open(os.path.join(dir_, output_filename), "w") as out:
         for filename in files:
             galaxy_name = os.path.split(filename)[1].split("_")[0]
-            data = read_output(filename)
+
+            try:
+                data = read_output(filename)
+            except Exception as e:
+                print "Error dealing with file '{}': {}: {}".format(filename, e.__class__.__name__, str(e))
+                continue
+
             #data = read_output_chi2(filename)
 
             if n == 0:

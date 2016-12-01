@@ -114,6 +114,7 @@ def read_output(filename):
                          "1_SKY_0","1_SKY_1","1_SKY_2","1_SKY_3","1_SKY_4"]
     hdulist = fits.open(filename)
 
+
     ret = OrderedDict()
     for name in fields_to_extract:
         expr = hdulist[7].header[name]
@@ -121,9 +122,14 @@ def read_output(filename):
         # Matches pattern such as '15.7492 +/- 0.0026'
         gg = re.match("([0-9.-]+)\s*\+/-\s*([0-9.-]+)", expr)
 
+        if expr.startswith("*"):
+            print expr, name, filename
+            continue
         if gg is not None:
             value, error = gg.groups()
             # We know that it is a (value, error) pair
+            #print expr
+
         elif expr.startswith("["):
             value = expr.strip()[1:-1]
             error = '0.'
@@ -135,6 +141,7 @@ def read_output(filename):
         ret[name + "_ERROR"] = error
 
     hdulist.close()
+
     return ret
 
 

@@ -3,6 +3,7 @@
 import glob
 import os
 from ariastro import *
+import numpy
 import sys
 
 
@@ -85,14 +86,18 @@ for galaxy_name in galaxy_names:
 
     # Test 1
     if not os.path.isfile(filename_test):
-        print "**WARNING**: file '%s' not found, skipping galaxy '%s' :(" % (filename_test, galaxy_name)
+        msg = "**WARNING**: file '%s' not found, skipping galaxy '%s' :(" % (filename_test, galaxy_name)
+        print msg
+        write_not_run(galaxy_name, msg)
         continue
 
     row = find_row_by_galaxy_name(table, galaxy_name)
 
     # Test 2
     if not row:
-        print "**WARNING**: galaxy '%s' not found in table :(" % (galaxy_name,)
+        msg = "**WARNING**: galaxy '%s' not found in table :(" % (galaxy_name,)
+        print msg
+        write_not_run(galaxy_name, msg)
         continue
 
     columns_needed = ["x0Fit2D_u", "x0Fit2D_g", "x0Fit2D_r", "x0Fit2D_i", "x0Fit2D_z", "y0Fit2D_u", "y0Fit2D_g",
@@ -103,12 +108,16 @@ for galaxy_name in galaxy_names:
     # Test 3
     for name in columns_needed:
         if not row[name]:
-            print "**WARNING**: row '%s' is empty, cannot process galaxy '%s' :(" % (name, galaxy_name)
+            msg = "**WARNING**: row '%s' is empty, cannot process galaxy '%s' :(" % (name, galaxy_name)
+            print msg
+            write_not_run(galaxy_name, msg)
             continue
             # break
 
 
     width, height = get_dims(filename_test)
+
+    get_exptime(os.path.join(PATH, galaxy_name + "_u.fits"))
 
     row = find_row_by_galaxy_name(table, galaxy_name)
 
@@ -123,7 +132,7 @@ for galaxy_name in galaxy_names:
     #    print "Could not find galaxy '%s' in table" % galaxy_name
 
 
-    # If the following is put 'True', just pretends that galaxy will be processed, but does nothing
+    # If the following is put 'True', just pretends that galaxy will be processed, but does noth
 
     print("**Info**: GONNA PROCESS GALAXY {}".format(galaxy_name))
     igal = igal +1
@@ -131,9 +140,20 @@ for galaxy_name in galaxy_names:
     if not PROCESS_GALAXIES:
         continue
 
+    zpu=24.63-2.5*numpy.log10(get_exptime(os.path.join(PATH, galaxy_name + "_u.fits")))
+    zpg=25.11-2.5*numpy.log10(get_exptime(os.path.join(PATH, galaxy_name + "_g.fits")))
+    zpr=24.80-2.5*numpy.log10(get_exptime(os.path.join(PATH, galaxy_name + "_r.fits")))
+    zpi=24.36-2.5*numpy.log10(get_exptime(os.path.join(PATH, galaxy_name + "_i.fits")))
+    zpz=22.83-2.5*numpy.log10(get_exptime(os.path.join(PATH, galaxy_name + "_z.fits")))
+
     contents = replace_pattern_in_template(template, "@@@@@@", galaxy_name)
     contents = replace_pattern_in_template(contents, "WWWWWW", str(width))
     contents = replace_pattern_in_template(contents, "HHHHHH", str(height))
+    contents = replace_pattern_in_template(contents, "ZPU", str(float(zpu)))
+    contents = replace_pattern_in_template(contents, "ZPG", str(float(zpg)))
+    contents = replace_pattern_in_template(contents, "ZPR", str(float(zpr)))
+    contents = replace_pattern_in_template(contents, "ZPI", str(float(zpi)))
+    contents = replace_pattern_in_template(contents, "ZPZ", str(float(zpz)))
     contents = replace_pattern_in_template(contents, "XUXUXU", row["x0Fit2D_u"])
     contents = replace_pattern_in_template(contents, "XGXGXG", row["x0Fit2D_g"])
     contents = replace_pattern_in_template(contents, "XRXRXR", row["x0Fit2D_r"])
@@ -165,7 +185,7 @@ for galaxy_name in galaxy_names:
     os.system(COMMAND)
 
 
-    #	break
+   #break
 
 ##Read outputs from the SS fit
 # create_output_table("../outputs")

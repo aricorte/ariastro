@@ -6,10 +6,13 @@ ariastro.egg-info/SOURCES.txt
 ariastro.egg-info/dependency_links.txt
 ariastro.egg-info/requires.txt
 ariastro.egg-info/top_level.txt
+scripts/RGBImage.py
 scripts/__init__.py
 scripts/create-output-table.py
 scripts/dump-header.py
 scripts/galfitm-1.2.1-linux-x86_64
+scripts/plot_colour.py
+scripts/plot_comp.py
 scripts/process-all-bd-fits.py
 scripts/process-all-bd-fits2.py
 scripts/process-all-fits.py

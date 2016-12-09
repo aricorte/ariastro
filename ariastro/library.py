@@ -1,4 +1,5 @@
-__all__ = ["get_dims", "load_jma_gri", "find_row_by_galaxy_name","find_row_by_galaxy_name2","read_output","create_output_table"]
+__all__ = ["get_dims", "load_jma_gri", "find_row_by_galaxy_name","find_row_by_galaxy_name2","read_output",
+           "create_output_table", "get_exptime", "write_bad_fit", "write_not_run"]
 
 import numpy as np
 
@@ -9,6 +10,21 @@ import os
 import re
 
 
+FILENAME_NOT_RUN = "not-run.csv"
+FILENAME_BAD_FIT = "bad-fit.csv"
+_file_not_run = open(FILENAME_NOT_RUN, "w")
+_file_bad_fit = open(FILENAME_BAD_FIT, "w")
+
+
+def write_not_run(galaxy_name, s):
+    _file_not_run.write('%-40s,"%s"\n' % (galaxy_name, s))
+
+
+def write_bad_fit(galaxy_name, s):
+    _file_bad_fit.write('%-40s,"%s"\n' % (galaxy_name, s))
+
+
+
 def get_dims(filename):
     """Returns a tuple (width, height)"""
     hdulist = fits.open(filename)
@@ -16,7 +32,16 @@ def get_dims(filename):
     ret = (hdu.header["NAXIS1"], hdu.header["NAXIS2"])
     hdulist.close()
     return ret
-    
+
+
+def get_exptime(filename):
+    """Returns exposure-time from image header"""
+    hdulist = fits.open(filename)
+    hdu = hdulist[0]
+    ret = hdu.header["EXPTIME"]
+    hdulist.close()
+    return ret
+
 
 def load_jma_gri(filename):
     """Loads a file such as CALIFA-JMA-gri.mfmtk (it is a CSV file)
@@ -116,15 +141,21 @@ def read_output(filename):
 
 
     ret = OrderedDict()
+    flag_invalid = False #will be set to True if any values has a "*"
     for name in fields_to_extract:
         expr = hdulist[7].header[name]
+        #if expr.startswith("*"):
+        if "*" in expr:
+            msg = "Invalid value for header '{}': '{}'".format(name, expr)
+            raise RuntimeError(msg)
+            #flag_invalid = True
+            #break
+            #print expr, name, filename
+            #continue
 
         # Matches pattern such as '15.7492 +/- 0.0026'
         gg = re.match("([0-9.-]+)\s*\+/-\s*([0-9.-]+)", expr)
 
-        if expr.startswith("*"):
-            print expr, name, filename
-            continue
         if gg is not None:
             value, error = gg.groups()
             # We know that it is a (value, error) pair
@@ -141,6 +172,9 @@ def read_output(filename):
         ret[name + "_ERROR"] = error
 
     hdulist.close()
+
+    #if flag_invalid:
+    #    return None
 
     return ret
 
@@ -249,7 +283,9 @@ def create_output_table(dir_=".", output_filename="output-mega-califa.txt"):
             try:
                 data = read_output(filename)
             except Exception as e:
-                print "Error dealing with file '{}': {}: {}".format(filename, e.__class__.__name__, str(e))
+                msg = "Error dealing with file '{}': {}: {}".format(filename, e.__class__.__name__, str(e))
+                print msg
+                write_bad_fit(galaxy_name, msg)
                 continue
 
             #data = read_output_chi2(filename)

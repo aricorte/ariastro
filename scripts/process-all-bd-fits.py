@@ -64,7 +64,7 @@ table = load_jma_gri("output-mega-califa.cvs")
 
 # # Runs script for all galaxies
 FEEDME_FILENAME = "galfit.feedme"
-COMMAND = "./galfitm-1.1.8-osx "+FEEDME_FILENAME
+COMMAND = "./galfitm-1.2.1-linux-x86_64  "+FEEDME_FILENAME
 for galaxy_name in galaxy_names:
     filename_test = os.path.join(PATH, galaxy_name+"_g.fits")
 
@@ -81,9 +81,9 @@ for galaxy_name in galaxy_names:
             goes = False
 
     if goes:
-        columns_needed = ["2_XC_G", "2_YC_G", "2_XC_R", "2_YC_R", "2_XC_I", "2_YC_I", "1_SKY_0",
-                          "1_SKY_1", "1_SKY_2", "2_MAG_G", "2_MAG_R", "2_MAG_I","2_RE_G","2_RE_R","2_RE_I","2_N_R","2_N_G","2_N_I",
-                          "2_AR_G","2_AR_R","2_AR_I",]
+        columns_needed = ["2_XC_U","2_YC_U","2_XC_G","2_YC_G","2_XC_R","2_YC_R","2_XC_I","2_YC_I","2_XC_Z","2_YC_Z","1_SKY_0",
+                          "1_SKY_1", "1_SKY_2","1_SKY_3","1_SKY_4","2_MAG_U","2_MAG_G", "2_MAG_R", "2_MAG_I","2_MAG_Z","2_RE_U","2_RE_G","2_RE_R","2_RE_I","2_RE_Z",
+                          "2_N_U","2_N_G","2_N_R","2_N_I","2_N_Z","2_AR_U","2_AR_G","2_AR_R","2_AR_I","2_AR_Z",]
         
         #for name in columns_needed:
             #if not row[name]:
@@ -95,18 +95,26 @@ for galaxy_name in galaxy_names:
         width, height = get_dims(filename_test)
 
         row = find_row_by_galaxy_name2(table, galaxy_name)
+        mag_u= row["2_MAG_U"]
         mag_g= row["2_MAG_G"]
         mag_r= row["2_MAG_R"]
         mag_i= row["2_MAG_I"]
+        mag_z= row["2_MAG_Z"]
+        n_u= row["2_N_U"]
         n_g= row["2_N_G"]
         n_r= row["2_N_R"]
         n_i= row["2_N_I"]
+        n_z= row["2_N_Z"]
+        re_u= row["2_RE_U"]
         re_g= row["2_RE_G"]
         re_r= row["2_RE_R"]
         re_i= row["2_RE_I"]
+        re_z= row["2_RE_Z"]
+        ar_u= row["2_AR_U"]
         ar_g= row["2_AR_G"]
         ar_r= row["2_AR_R"]
         ar_i= row["2_AR_I"]
+        ar_z= row["2_AR_Z"]
         
         #except:
         #    print "Could not find galaxy '%s' in table" % galaxy_name
@@ -115,29 +123,43 @@ for galaxy_name in galaxy_names:
             contents = replace_pattern_in_template(template, "@@@@@@", galaxy_name)
             contents = replace_pattern_in_template(contents, "WWWWWW", str(width))
             contents = replace_pattern_in_template(contents, "HHHHHH", str(height))
+            contents = replace_pattern_in_template(contents, "XUXUXU", row["2_XC_U"])
             contents = replace_pattern_in_template(contents, "XGXGXG", row["2_XC_G"])
             contents = replace_pattern_in_template(contents, "XRXRXR", row["2_XC_R"])
             contents = replace_pattern_in_template(contents, "XIXIXI", row["2_XC_I"])
+            contents = replace_pattern_in_template(contents, "XZXZXZ", row["2_XC_Z"])
+            contents = replace_pattern_in_template(contents, "YUYUYU", row["2_YC_U"])
             contents = replace_pattern_in_template(contents, "YGYGYG", row["2_YC_G"])
             contents = replace_pattern_in_template(contents, "YRYRYR", row["2_YC_R"])
             contents = replace_pattern_in_template(contents, "YIYIYI", row["2_YC_I"])
-            contents = replace_pattern_in_template(contents, "BKGG", row["1_SKY_0"])
-            contents = replace_pattern_in_template(contents, "BKGR", row["1_SKY_1"])
-            contents = replace_pattern_in_template(contents, "BKGI", row["1_SKY_2"])
+            contents = replace_pattern_in_template(contents, "YZYZYZ", row["2_YC_Z"])
+            contents = replace_pattern_in_template(contents, "BKGU", row["1_SKY_0"])
+            contents = replace_pattern_in_template(contents, "BKGG", row["1_SKY_1"])
+            contents = replace_pattern_in_template(contents, "BKGR", row["1_SKY_2"])
+            contents = replace_pattern_in_template(contents, "BKGI", row["1_SKY_3"])
+            contents = replace_pattern_in_template(contents, "BKGI", row["1_SKY_4"])
+            contents = replace_pattern_in_template(contents, "MMABU", str(float(mag_u)+1.5))
             contents = replace_pattern_in_template(contents, "MMABG", str(float(mag_g)+1.5))
             contents = replace_pattern_in_template(contents, "MMABR", str(float(mag_r)+1.5))
             contents = replace_pattern_in_template(contents, "MMABI", str(float(mag_i)+1.5))
+            contents = replace_pattern_in_template(contents, "MMABZ", str(float(mag_z)+1.5))
+            contents = replace_pattern_in_template(contents, "MMADU", str(float(mag_u)+1.5))
             contents = replace_pattern_in_template(contents, "MMADG", str(float(mag_g)+0.65))
             contents = replace_pattern_in_template(contents, "MMADR", str(float(mag_r)+0.65))
             contents = replace_pattern_in_template(contents, "MMADI", str(float(mag_i)+0.65))
-            contents = replace_pattern_in_template(contents, "NNBG", str((float(n_g)+float(n_r)+float(n_i))/3))
-            contents = replace_pattern_in_template(contents, "ARDG", str((float(ar_g)+float(ar_r)+float(ar_i))/3))
+            contents = replace_pattern_in_template(contents, "MMADZ", str(float(mag_z)+0.65))
+            contents = replace_pattern_in_template(contents, "NNBG", str(float(n_u)+(float(n_g)+float(n_r)+float(n_i))+float(n_z)/5))
+            contents = replace_pattern_in_template(contents, "ARDG", str((float(ar_u)+float(ar_g)+float(ar_r)+float(ar_i)+float(ar_g)/5)))
+            contents = replace_pattern_in_template(contents, "REBU", str(float(re_u)*0.3))
             contents = replace_pattern_in_template(contents, "REBG", str(float(re_g)*0.3))
             contents = replace_pattern_in_template(contents, "REBR", str(float(re_r)*0.3))
             contents = replace_pattern_in_template(contents, "REBI", str(float(re_i)*0.3))
+            contents = replace_pattern_in_template(contents, "REBZ", str(float(re_z)*0.3))
+            contents = replace_pattern_in_template(contents, "REDU", str(float(re_u)*1.5))
             contents = replace_pattern_in_template(contents, "REDG", str(float(re_g)*1.5))
             contents = replace_pattern_in_template(contents, "REDR", str(float(re_r)*1.5))
             contents = replace_pattern_in_template(contents, "REDI", str(float(re_i)*1.5))
+            contents = replace_pattern_in_template(contents, "REDZ", str(float(re_z)*1.5))
 
 
 #        contents = replace_pattern_in_template(contents, "XXXXXX", str(float(width)/2))
@@ -146,10 +168,10 @@ for galaxy_name in galaxy_names:
             with open(FEEDME_FILENAME, "w") as file:
                 file.write(contents)
             os.system(COMMAND)  
-#	break
+	break
 
 ##Read outputs from the SS fit
-create_output_table("../outputs")
+#create_output_table("../outputs")
 sys.exit()
 
 

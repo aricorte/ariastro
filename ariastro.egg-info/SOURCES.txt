@@ -9,6 +9,7 @@ ariastro.egg-info/top_level.txt
 scripts/RGBImage.py
 scripts/__init__.py
 scripts/create-output-table.py
+scripts/create-output-table_bd.py
 scripts/dump-header.py
 scripts/galfitm-1.2.1-linux-x86_64
 scripts/plot_colour.py

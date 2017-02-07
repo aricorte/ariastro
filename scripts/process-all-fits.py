@@ -10,7 +10,7 @@ import sys
 # # Definition of constants
 
 
-PROCESS_GALAXIES = False  # Simulation mode or fitting mode
+PROCESS_GALAXIES = True  # Simulation mode or fitting mode
 FEEDME_FILENAME = "galfit.feedme"
 TEMPLATE_FILENAME = "galfit.feedme.template"
 COMMAND = "./galfitm-1.2.1-linux-x86_64  " + FEEDME_FILENAME
@@ -140,11 +140,14 @@ for galaxy_name in galaxy_names:
     if not PROCESS_GALAXIES:
         continue
 
-    zpu=24.63-2.5*numpy.log10(get_exptime(os.path.join(PATH, galaxy_name + "_u.fits")))
-    zpg=25.11-2.5*numpy.log10(get_exptime(os.path.join(PATH, galaxy_name + "_g.fits")))
-    zpr=24.80-2.5*numpy.log10(get_exptime(os.path.join(PATH, galaxy_name + "_r.fits")))
-    zpi=24.36-2.5*numpy.log10(get_exptime(os.path.join(PATH, galaxy_name + "_i.fits")))
-    zpz=22.83-2.5*numpy.log10(get_exptime(os.path.join(PATH, galaxy_name + "_z.fits")))
+
+    #expt_u=float(get_exptime(os.path.join(PATH, galaxy_name + "_u.fits")))
+    zpu=24.63-2.5*numpy.log10(float(get_exptime(os.path.join(PATH, galaxy_name + "_u.fits"))))
+    zpg=25.11-2.5*numpy.log10(float(get_exptime(os.path.join(PATH, galaxy_name + "_g.fits"))))
+    zpr=24.80-2.5*numpy.log10(float(get_exptime(os.path.join(PATH, galaxy_name + "_r.fits"))))
+    zpi=24.36-2.5*numpy.log10(float(get_exptime(os.path.join(PATH, galaxy_name + "_i.fits"))))
+    zpz=22.83-2.5*numpy.log10(float(get_exptime(os.path.join(PATH, galaxy_name + "_z.fits"))))
+
 
     contents = replace_pattern_in_template(template, "@@@@@@", galaxy_name)
     contents = replace_pattern_in_template(contents, "WWWWWW", str(width))
@@ -185,7 +188,7 @@ for galaxy_name in galaxy_names:
     os.system(COMMAND)
 
 
-   #break
+    #break
 
 ##Read outputs from the SS fit
 # create_output_table("../outputs")

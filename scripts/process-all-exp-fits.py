@@ -12,7 +12,7 @@ import sys
 
 PROCESS_GALAXIES = True  # Simulation mode or fitting mode
 FEEDME_FILENAME = "galfit.feedme"
-TEMPLATE_FILENAME = "galfit.feedme.template"
+TEMPLATE_FILENAME = "galfit.feedme.template_exp"
 COMMAND = "./galfitm-1.2.1-linux-x86_64  " + FEEDME_FILENAME
 FILENAME_CSV_TABLE = "all-gal-corr.csv"
 

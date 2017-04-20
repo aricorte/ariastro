@@ -1,0 +1,5 @@
+ariastro.egg-info/PKG-INFO
+ariastro.egg-info/SOURCES.txt
+ariastro.egg-info/dependency_links.txt
+ariastro.egg-info/requires.txt
+ariastro.egg-info/top_level.txt

@@ -1,6 +1,6 @@
 import pyfits
 import numpy
-from .RGBImage import *
+from RGBImage import *
 
 p = pyfits.open('../../results/3115_out5_3c_n4_c_ba_r2_n2_n2.fits')
 

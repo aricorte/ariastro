@@ -133,7 +133,7 @@ def read_output(filename):
         TODO get output and paste here
     """
 
-    print(("Processing file '{}'".format(filename)))
+    print("Processing file '{}'".format(filename))
 
     hdulist = fits.open(filename)
     data = hdulist[-2].data
@@ -204,7 +204,7 @@ def read_output_chi2(filename):
         TODO get output and paste here
     """
 
-    print(("Processing file '{}'".format(filename)))
+    print("Processing file '{}'".format(filename))
 
     hdulist = fits.open(filename)
     data = hdulist[-4].data
@@ -487,14 +487,14 @@ def create_output_table(dir_=".", output_filename="output-mega-califa.txt"):
             galaxy_name = os.path.split(filename)[1].split("_")[0]
 
             if n == 0:
-                out.write("#" " " + "galaxy_name" + " " + " ".join(list(data.keys())) + "\n")
+                out.write("#" " " + "galaxy_name" + " " + " ".join(data.keys()) + "\n")
 
-            out.write(galaxy_name + " " + " ".join([str(x) for x in list(data.values())]) + "\n")
+            out.write(galaxy_name + " " + " ".join([str(x) for x in data.values()]) + "\n")
 
             n += 1
 
             if n % 10 == 0:
-                print(("Processed {}/{} files".format(n, num_files)))
+                print("Processed {}/{} files".format(n, num_files))
 
     return n
 
@@ -521,14 +521,14 @@ def create_output_table_chi2(dir_=".", output_filename="output-mega-califa_chi2.
             galaxy_name = os.path.split(filename)[1].split("_")[0]
 
             if n == 0:
-                out.write("#" " " + "galaxy_name" + " " + " ".join(list(data.keys())) + "\n")
+                out.write("#" " " + "galaxy_name" + " " + " ".join(data.keys()) + "\n")
 
-            out.write(galaxy_name + " " + " ".join([str(x) for x in list(data.values())]) + "\n")
+            out.write(galaxy_name + " " + " ".join([str(x) for x in data.values()]) + "\n")
 
             n += 1
 
             if n % 10 == 0:
-                print(("Processed {}/{} files".format(n, num_files)))
+                print("Processed {}/{} files".format(n, num_files))
 
     return n
 
@@ -584,7 +584,7 @@ def create_output_table_bd(dir_=".", output_filename="output-mega-califa_bd.txt"
     """
 
     files = glob.glob(os.path.join(dir_, "*.fits"))
-    print(files)
+    print files
     n = 0
     with open(os.path.join(dir_, output_filename), "w") as out:
         for filename in files:
@@ -594,16 +594,16 @@ def create_output_table_bd(dir_=".", output_filename="output-mega-califa_bd.txt"
                 data = read_output_bd(filename)
             except Exception as e:
                 msg = "Error dealing with file '{}': {}: {}".format(filename, e.__class__.__name__, str(e))
-                print(msg)
+                print msg
                 write_bad_fit(galaxy_name, msg)
                 continue
 
             # data = read_output_chi2(filename)
 
             if n == 0:
-                out.write("#" " " + "galaxy_name" + " " + " ".join(list(data.keys())) + "\n")
+                out.write("#" " " + "galaxy_name" + " " + " ".join(data.keys()) + "\n")
 
-            out.write(galaxy_name + " " + " ".join(list(data.values())) + "\n")
+            out.write(galaxy_name + " " + " ".join(data.values()) + "\n")
 
             n += 1
 

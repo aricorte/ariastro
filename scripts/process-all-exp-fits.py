@@ -22,7 +22,7 @@ with open(TEMPLATE_FILENAME, "r") as file:
         if line.startswith("B)"):
             pieces = line.split(" ")
             OUTPUT_PATTERN = pieces[1].strip()
-            print "Found output filename pattern: '{}'".format(OUTPUT_PATTERN)
+            print("Found output filename pattern: '{}'".format(OUTPUT_PATTERN))
             if not "@@@@@@" in OUTPUT_PATTERN:
                 raise RuntimeError("Could not figure out output pattern, sorry, gotta find new solution for this")
 
@@ -80,14 +80,14 @@ for galaxy_name in galaxy_names:
     # Test 0
     output_filename = replace_pattern_in_template(OUTPUT_PATTERN, "@@@@@@", galaxy_name)
     if os.path.isfile(output_filename):
-        print "**INFO**: output file '%s' already exists, skipping galaxy '%s' :)" % (output_filename, galaxy_name)
+        print("**INFO**: output file '%s' already exists, skipping galaxy '%s' :)" % (output_filename, galaxy_name))
         continue
 
 
     # Test 1
     if not os.path.isfile(filename_test):
         msg = "**WARNING**: file '%s' not found, skipping galaxy '%s' :(" % (filename_test, galaxy_name)
-        print msg
+        print(msg)
         write_not_run(galaxy_name, msg)
         continue
 
@@ -96,7 +96,7 @@ for galaxy_name in galaxy_names:
     # Test 2
     if not row:
         msg = "**WARNING**: galaxy '%s' not found in table :(" % (galaxy_name,)
-        print msg
+        print(msg)
         write_not_run(galaxy_name, msg)
         continue
 
@@ -109,7 +109,7 @@ for galaxy_name in galaxy_names:
     for name in columns_needed:
         if not row[name]:
             msg = "**WARNING**: row '%s' is empty, cannot process galaxy '%s' :(" % (name, galaxy_name)
-            print msg
+            print(msg)
             write_not_run(galaxy_name, msg)
             continue
             # break
@@ -134,7 +134,7 @@ for galaxy_name in galaxy_names:
 
     # If the following is put 'True', just pretends that galaxy will be processed, but does noth
 
-    print("**Info**: GONNA PROCESS GALAXY {}".format(galaxy_name))
+    print(("**Info**: GONNA PROCESS GALAXY {}".format(galaxy_name)))
     igal = igal +1
 
     if not PROCESS_GALAXIES:
@@ -201,4 +201,4 @@ for galaxy_name in galaxy_names:
 
 #    pieces = os.path.basename(f)
 
-print "I fit", igal,"galaxies"
+print("I fit", igal,"galaxies")

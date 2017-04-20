@@ -20,7 +20,7 @@ with open(TEMPLATE_FILENAME, "r") as file:
         if line.startswith("B)"):
             pieces = line.split(" ")
             OUTPUT_PATTERN = pieces[1].strip()
-            print("Found output filename pattern: '{}'".format(OUTPUT_PATTERN))
+            print "Found output filename pattern: '{}'".format(OUTPUT_PATTERN)
             if not "@@@@@@" in OUTPUT_PATTERN:
                 raise RuntimeError("Could not figure out output pattern, sorry, gotta find new solution for this")
 
@@ -92,20 +92,20 @@ for galaxy_name in galaxy_names:
 
     goes = True
     if not os.path.isfile(filename_test):
-        print("**WARNING**: file '%s' not found, skipping galaxy '%s' :(" % (filename_test, galaxy_name))
+        print "**WARNING**: file '%s' not found, skipping galaxy '%s' :(" % (filename_test, galaxy_name)
         goes = False
 
     output_filename = replace_pattern_in_template(OUTPUT_PATTERN, "@@@@@@", galaxy_name)
 
     if os.path.isfile(output_filename):
-        print("**INFO**: output file '%s' already exists, skipping galaxy '%s' :)" % (output_filename, galaxy_name))
+        print "**INFO**: output file '%s' already exists, skipping galaxy '%s' :)" % (output_filename, galaxy_name)
         continue
 
     if goes:
         row = find_row_by_galaxy_name2(table, galaxy_name)
 
         if not row:
-            print("**WARNING**: galaxy '%s' not found in table :(" % (galaxy_name,))
+            print "**WARNING**: galaxy '%s' not found in table :(" % (galaxy_name,)
             goes = False
 
     if goes:
@@ -128,7 +128,7 @@ for galaxy_name in galaxy_names:
         row = find_row_by_galaxy_name2(table, galaxy_name)
 
         # If the following is put 'True', just pretends that galaxy will be processed, but does noth
-        print(("**Info**: GONNA PROCESS GALAXY {}".format(galaxy_name)))
+        print("**Info**: GONNA PROCESS GALAXY {}".format(galaxy_name))
         igal = igal +1
 
         if not PROCESS_GALAXIES:
@@ -227,7 +227,7 @@ for galaxy_name in galaxy_names:
 #create_output_table("../outputs")
 #sys.exit()
 
-print("I fit", igal,"galaxies")
+print "I fit", igal,"galaxies"
 
 #    pieces = os.path.basename(f)
 

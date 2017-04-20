@@ -1,4 +1,5 @@
-#!/usr/bin/env python   
+#!/usr/bin/python
+
 import glob
 import os
 from ariastro import *
@@ -9,11 +10,11 @@ import sys
 # # Definition of constants
 
 
-PROCESS_GALAXIES = False  # Simulation mode or fitting mode
+PROCESS_GALAXIES = True  # Simulation mode or fitting mode
 FEEDME_FILENAME = "galfit.feedme"
-TEMPLATE_FILENAME = "galfit.feedme.template"
+TEMPLATE_FILENAME = "galfit.feedme.template_exp"
 COMMAND = "./galfitm-1.2.1-linux-x86_64  " + FEEDME_FILENAME
-FILENAME_CSV_TABLE = "CALIFA_IDs_mfmtk693_T_ugriz.new.csv"
+FILENAME_CSV_TABLE = "all-gal-corr.csv"
 
 # Tries to figure out the output filename pattern from inside the template
 with open(TEMPLATE_FILENAME, "r") as file:
@@ -21,7 +22,7 @@ with open(TEMPLATE_FILENAME, "r") as file:
         if line.startswith("B)"):
             pieces = line.split(" ")
             OUTPUT_PATTERN = pieces[1].strip()
-            print(("Found output filename pattern: '{}'".format(OUTPUT_PATTERN)))
+            print "Found output filename pattern: '{}'".format(OUTPUT_PATTERN)
             if not "@@@@@@" in OUTPUT_PATTERN:
                 raise RuntimeError("Could not figure out output pattern, sorry, gotta find new solution for this")
 
@@ -79,14 +80,14 @@ for galaxy_name in galaxy_names:
     # Test 0
     output_filename = replace_pattern_in_template(OUTPUT_PATTERN, "@@@@@@", galaxy_name)
     if os.path.isfile(output_filename):
-        print(("**INFO**: output file '%s' already exists, skipping galaxy '%s' :)" % (output_filename, galaxy_name)))
+        print "**INFO**: output file '%s' already exists, skipping galaxy '%s' :)" % (output_filename, galaxy_name)
         continue
 
 
     # Test 1
     if not os.path.isfile(filename_test):
         msg = "**WARNING**: file '%s' not found, skipping galaxy '%s' :(" % (filename_test, galaxy_name)
-        print(msg)
+        print msg
         write_not_run(galaxy_name, msg)
         continue
 
@@ -95,11 +96,12 @@ for galaxy_name in galaxy_names:
     # Test 2
     if not row:
         msg = "**WARNING**: galaxy '%s' not found in table :(" % (galaxy_name,)
-        print(msg)
+        print msg
         write_not_run(galaxy_name, msg)
         continue
 
-    columns_needed = ["skybg_u", "skybg_g",
+    columns_needed = ["x0Fit2D_u", "x0Fit2D_g", "x0Fit2D_r", "x0Fit2D_i", "x0Fit2D_z", "y0Fit2D_u", "y0Fit2D_g",
+                      "y0Fit2D_r", "y0Fit2D_i", "y0Fit2D_z", "skybg_u", "skybg_g",
                       "skybg_r", "skybg_i", "skybg_z", "u", "g", "r", "i", "z"]
 
 
@@ -107,7 +109,7 @@ for galaxy_name in galaxy_names:
     for name in columns_needed:
         if not row[name]:
             msg = "**WARNING**: row '%s' is empty, cannot process galaxy '%s' :(" % (name, galaxy_name)
-            print(msg)
+            print msg
             write_not_run(galaxy_name, msg)
             continue
             # break
@@ -115,7 +117,7 @@ for galaxy_name in galaxy_names:
 
     width, height = get_dims(filename_test)
 
-    #get_exptime(os.path.join(PATH, galaxy_name + "_u.fits"))
+    get_exptime(os.path.join(PATH, galaxy_name + "_u.fits"))
 
     row = find_row_by_galaxy_name(table, galaxy_name)
 
@@ -132,7 +134,7 @@ for galaxy_name in galaxy_names:
 
     # If the following is put 'True', just pretends that galaxy will be processed, but does noth
 
-    print(("**Info**: GONNA PROCESS GALAXY {}".format(galaxy_name)))
+    print("**Info**: GONNA PROCESS GALAXY {}".format(galaxy_name))
     igal = igal +1
 
     if not PROCESS_GALAXIES:
@@ -149,12 +151,6 @@ for galaxy_name in galaxy_names:
     zpi=24.36-2.5*numpy.log10(float(get_exptime(os.path.join(PATH, galaxy_name + "_i.fits"))))
     zpz=22.83-2.5*numpy.log10(float(get_exptime(os.path.join(PATH, galaxy_name + "_z.fits"))))
 
-    x0u,y0u=get_x0y0(os.path.join(PATH, galaxy_name + "_u.fits"))
-    x0g,y0g=get_x0y0(os.path.join(PATH, galaxy_name + "_g.fits"))
-    x0r,y0r=get_x0y0(os.path.join(PATH, galaxy_name + "_r.fits"))
-    x0i,y0i=get_x0y0(os.path.join(PATH, galaxy_name + "_i.fits"))
-    x0z,y0z=get_x0y0(os.path.join(PATH, galaxy_name + "_z.fits"))
-
 
     contents = replace_pattern_in_template(template, "@@@@@@", galaxy_name)
     contents = replace_pattern_in_template(contents, "WWWWWW", str(width))
@@ -164,16 +160,16 @@ for galaxy_name in galaxy_names:
     contents = replace_pattern_in_template(contents, "ZPR", str(float(zpr)))
     contents = replace_pattern_in_template(contents, "ZPI", str(float(zpi)))
     contents = replace_pattern_in_template(contents, "ZPZ", str(float(zpz)))
-    contents = replace_pattern_in_template(contents, "XUXUXU", str(float(x0u)))
-    contents = replace_pattern_in_template(contents, "XGXGXG", str(float(x0g)))
-    contents = replace_pattern_in_template(contents, "XRXRXR", str(float(x0r)))
-    contents = replace_pattern_in_template(contents, "XIXIXI", str(float(x0i)))
-    contents = replace_pattern_in_template(contents, "XZXZXZ", str(float(x0z)))
-    contents = replace_pattern_in_template(contents, "YUYUYU", str(float(y0u)))
-    contents = replace_pattern_in_template(contents, "YGYGYG", str(float(y0g)))
-    contents = replace_pattern_in_template(contents, "YRYRYR", str(float(y0r)))
-    contents = replace_pattern_in_template(contents, "YIYIYI", str(float(y0i)))
-    contents = replace_pattern_in_template(contents, "YZYZYZ", str(float(y0z)))
+    contents = replace_pattern_in_template(contents, "XUXUXU", row["x0Fit2D_i"])
+    contents = replace_pattern_in_template(contents, "XGXGXG", row["x0Fit2D_i"])
+    contents = replace_pattern_in_template(contents, "XRXRXR", row["x0Fit2D_i"])
+    contents = replace_pattern_in_template(contents, "XIXIXI", row["x0Fit2D_i"])
+    contents = replace_pattern_in_template(contents, "XZXZXZ", row["x0Fit2D_i"])
+    contents = replace_pattern_in_template(contents, "YUYUYU", row["y0Fit2D_i"])
+    contents = replace_pattern_in_template(contents, "YGYGYG", row["y0Fit2D_i"])
+    contents = replace_pattern_in_template(contents, "YRYRYR", row["y0Fit2D_i"])
+    contents = replace_pattern_in_template(contents, "YIYIYI", row["y0Fit2D_i"])
+    contents = replace_pattern_in_template(contents, "YZYZYZ", row["y0Fit2D_i"])
     contents = replace_pattern_in_template(contents, "BKGU", row["skybg_u"])
     contents = replace_pattern_in_template(contents, "BKGG", row["skybg_g"])
     contents = replace_pattern_in_template(contents, "BKGR", row["skybg_r"])
@@ -205,4 +201,4 @@ for galaxy_name in galaxy_names:
 
 #    pieces = os.path.basename(f)
 
-print(("I fit", igal,"galaxies"))
+print "I fit", igal,"galaxies"

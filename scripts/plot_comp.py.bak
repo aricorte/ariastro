@@ -8,7 +8,7 @@ import sys
 
 
 if len(sys.argv) < 2:
-    print("Usage: plot_comp.py <filename>")
+    print "Usage: plot_comp.py <filename>"
     sys.exit()
 
 filename = sys.argv[1]
@@ -22,7 +22,7 @@ p = fits.open(filename)
 
 med = [numpy.median(x) for x in [p['INPUT_u'].data,p['INPUT_g'].data,p['INPUT_g'].data]]
 
-print(med)
+print med
 
 
 # img = RGBImage(p['COMPONENT_2_sersic_j'].data-med[2],p['COMPONENT_2_sersic_h'].data-med[1],p['COMPONENT_2_sersic_'].data-med[0], scales=[0.11,0.09,0.1], mapping=map_Lupton04, beta=2.0)

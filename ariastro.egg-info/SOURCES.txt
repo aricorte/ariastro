@@ -10,12 +10,14 @@ scripts/RGBImage.py
 scripts/__init__.py
 scripts/create-output-table.py
 scripts/create-output-table_bd.py
+scripts/create-output-table_chi2.py
 scripts/dump-header.py
+scripts/galfit-fits-to-png.py
 scripts/galfitm-1.2.1-linux-x86_64
 scripts/plot_colour.py
 scripts/plot_comp.py
 scripts/process-all-bd-fits.py
-scripts/process-all-bd-fits2.py
+scripts/process-all-exp-fits.py
 scripts/process-all-fits.py
 scripts/test-load-jma-gri.py
 scripts/test-sth.py

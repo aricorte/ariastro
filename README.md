@@ -51,3 +51,7 @@ git push
 
   - rename file: Shift+F6
   - find file by name: Ctrl+Shift+N
+
+## Astroenv
+  
+   source activate astroenv

@@ -510,6 +510,11 @@ def create_output_table_chi2(dir_=".", output_filename="output-mega-califa_chi2.
 
     filenames = glob.glob(os.path.join(dir_, "*.fits"))
 
+    print(("test'".format(filenames)))
+
+    #parada = raw_input('paused')
+
+
     p = mp.Pool(8)
     rows = p.map(read_output_chi2, filenames)
 

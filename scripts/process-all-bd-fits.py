@@ -5,12 +5,14 @@ import os
 import sys
 import numpy
 from ariastro import *
+import multiprocessing as mp
 
-PROCESS_GALAXIES = True  # Simulation mode or fitting mode
+
+PROCESS_GALAXIES = True #Simulation mode or fitting mode
 FEEDME_FILENAME = "galfit.feedme"
 TEMPLATE_FILENAME = "galfit.feedme.template.br"
 COMMAND = "./galfitm-1.2.1-linux-x86_64  " + FEEDME_FILENAME
-FILENAME_TXT_TABLE = "../outputs_Jairomag/output-mega-califa.txt"
+FILENAME_TXT_TABLE = "../outputs/output-mega-califa-may.txt"
 
 
 
@@ -82,7 +84,8 @@ igal = 0
 
 # print table[0]
 # sys.exit()
-
+#p = mp.Pool(8)
+#rows = p.map(f,galaxy_name)
 
 # # Runs script for all galaxies
 #FEEDME_FILENAME = "galfit.feedme"

@@ -9,7 +9,7 @@ import sys
 # # Definition of constants
 
 
-PROCESS_GALAXIES = False  # Simulation mode or fitting mode
+PROCESS_GALAXIES = True  # Simulation mode or fitting mode
 FEEDME_FILENAME = "galfit.feedme"
 TEMPLATE_FILENAME = "galfit.feedme.template"
 COMMAND = "./galfitm-1.2.1-linux-x86_64  " + FEEDME_FILENAME

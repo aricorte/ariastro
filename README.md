@@ -46,6 +46,10 @@ git add . --all
 git commit -m "first commit"
 git push
 ```
+git status
+git add .--all
+git commit -m "blah blah"
+git push
 
 ## PyCharm shortcuts
 

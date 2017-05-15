@@ -46,8 +46,16 @@ git add . --all
 git commit -m "first commit"
 git push
 ```
+git status
+git add .--all
+git commit -m "blah blah"
+git push
 
 ## PyCharm shortcuts
 
   - rename file: Shift+F6
   - find file by name: Ctrl+Shift+N
+
+## Astroenv
+  
+   source activate astroenv

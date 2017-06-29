@@ -631,4 +631,11 @@ def dump_header(filename):
             f.write(repr(hdu.header) + "\n")
             i += 1
 
+def fromNMAGYtoCOUNTs
+    """Transforms NMAGYS into counts for both PSFS and images"""
+        hdulist = fits.open(filename)
+        hdu = hdulist[0]
+        ret = (hdu.data/0.00449599)
+        hdulist.close()
+        return re
 

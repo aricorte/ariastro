@@ -11,3 +11,5 @@ ariastro.egg-info
 __pycache__
 .#*
 
+*bak
+.idea

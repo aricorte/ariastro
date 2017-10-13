@@ -6,7 +6,6 @@ Run with python3 !
 
 """
 import matplotlib
-
 matplotlib.use("Qt5Agg")
 import matplotlib.pyplot as plt
 # "Nicer set of plot parameters"
@@ -16,7 +15,6 @@ import numpy as np
 import glob
 import f311.filetypes as ft
 import f311.explorer as ex
-import a99
 
 if __name__ == "__main__":
     filenames = glob.glob("*.fits")
@@ -24,18 +22,17 @@ if __name__ == "__main__":
     for filename in filenames:
         print("Processing file '{}'...".format(filename))
         try:
-            imgfilename = filename + ".png"
+            imgfilename = filename+".png"
 
             f = ft.FileGalfit()
             f.load(filename)
+            
+            ex.draw_15_tiles(f.hdulist)
 
-            ex.draw_galfit_tiles(f, 2000)
-            plt.show()
-
-            break
-
+            plt.savefig(imgfilename)
+            print("Saved file '{}'".format(imgfilename))
+            plt.close()
+            
         except Exception as e:
-            msg = "Error processing file '{}': '{}'".format(filename, str(e))
-            a99.get_python_logger().exception(msg)
-            print(msg)
+            print("Error processing file '{}': '{}'".format(filename, str(e)))
 

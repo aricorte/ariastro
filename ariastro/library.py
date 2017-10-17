@@ -1,5 +1,5 @@
 __all__ = ["get_dims", "load_jma_gri", "find_row_by_galaxy_name", "find_row_by_galaxy_name2", "read_output",
-           "create_output_table", "get_exptime", "write_bad_fit", "write_not_run","get_x0y0"]
+           "create_output_table", "get_exptime", "write_bad_fit", "write_not_run","get_x0y0","fromNMAGYtoCOUNTs"]
 
 import numpy as np
 
@@ -631,11 +631,33 @@ def dump_header(filename):
             f.write(repr(hdu.header) + "\n")
             i += 1
 
-def fromNMAGYtoCOUNTs
+def fromNMAGYtoCOUNTs(dir_="."):
     """Transforms NMAGYS into counts for both PSFS and images"""
-        hdulist = fits.open(filename)
-        hdu = hdulist[0]
-        ret = (hdu.data/0.00449599)
-        hdulist.close()
-        return re
 
+    ff = glob.glob(os.path.join(dir_, "*.fits"))
+    #file_names=[]
+    #for f in ff
+
+    #filename = os.path.basaname(f)
+    #pieces = filename.split("_")
+    #file_name = pieces[1]
+        #file_names.append(f)
+
+    #file_names = list(set(file_names))
+
+    
+    for file_name in ff:
+        print("Converting {}".format(file_name))
+        hdulist = fits.open(file_name)
+
+        med = np.mean(hdulist[0].data)
+        print("Mmmmmmmmmmmmm {}".format(med))
+        hdulist[0].data /= 0.00449599
+
+        os.unlink(file_name)
+        
+        hdulist.writeto(file_name)
+        hdulist.close()
+        
+
+    

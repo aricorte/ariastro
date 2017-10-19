@@ -47,34 +47,6 @@ def read_output_chi2(filename):
     for field_name in fields_to_extract:
 #        for i, band_name in enumerate(band_names):
         ret[field_name] = data[field_name]
-            # expr = hdulist[-2].header[field_name]
-            #
-            # # if expr.startswith("*"):
-            # if "*" in expr:
-            #     msg = "Invalid value for header '{}': '{}'".format(field_name, expr)
-            #     raise RuntimeError(msg)
-            #     # flag_invalid = True
-            #     # break
-            #     # print expr, name, filename
-            #     # continue
-            #
-            # # Matches pattern such as '15.7492 +/- 0.0026'
-            # gg = re.match("([0-9.-]+)\s*\+/-\s*([0-9.-]+)", expr)
-            #
-            # if gg is not None:
-            #     value, error = gg.groups()
-            #     # We know that it is a (value, error) pair
-            #     # print expr
-            #
-            # elif expr.startswith("["):
-            #     value = expr.strip()[1:-1]
-            #     error = '0.'
-            # else:
-            #     value = expr
-            #     error = '0.'
-            #
-            # ret[field_name] = value
-            # ret[field_name + "_ERROR"] = error
 
     hdulist.close()
 

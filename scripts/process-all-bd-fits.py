@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# TODO Write script docstring
+
 import glob
 import os
 import sys
@@ -9,7 +11,7 @@ import multiprocessing as mp
 import re
 
 
-CALL_GALFIT = True  # Simulation mode or fitting mode
+CALL_GALFIT = False  # Simulation mode or fitting mode
 FEEDME_FILENAME_PREFIX = "tmp.galfit.feedme_"
 TEMPLATE_FILENAME = "galfit.feedme.template.br"
 EXE_PATH = "./galfitm-1.2.1-linux-x86_64"  # path to the Galfit executable file
@@ -41,7 +43,7 @@ def job(galaxy_name):
         print("**WARNING**: file '%s' not found, skipping galaxy '%s' :(" % (filename_test, galaxy_name))
         return False
 
-    output_filename = replace_pattern_in_template(OUTPUT_PATTERN, "@@@@@@", galaxy_name)
+    output_filename = output_pattern.replace("@@@@@@", galaxy_name)
 
     # Condition 2
     if os.path.isfile(output_filename):
@@ -91,56 +93,58 @@ def job(galaxy_name):
     # except:
     #    print "Could not find galaxy '%s' in table" % galaxy_name
 
-    contents = replace_pattern_in_template(template, "@@@@@@", galaxy_name)
-    contents = replace_pattern_in_template(contents, "WWWWWW", str(width))
-    contents = replace_pattern_in_template(contents, "HHHHHH", str(height))
-    contents = replace_pattern_in_template(contents, "ZPU", str(float(zpu)))
-    contents = replace_pattern_in_template(contents, "ZPG", str(float(zpg)))
-    contents = replace_pattern_in_template(contents, "ZPR", str(float(zpr)))
-    contents = replace_pattern_in_template(contents, "ZPI", str(float(zpi)))
-    contents = replace_pattern_in_template(contents, "ZPZ", str(float(zpz)))
-    contents = replace_pattern_in_template(contents, "XUXUXU", row["COMP2_XC_U"])
-    contents = replace_pattern_in_template(contents, "XGXGXG", row["COMP2_XC_G"])
-    contents = replace_pattern_in_template(contents, "XRXRXR", row["COMP2_XC_R"])
-    contents = replace_pattern_in_template(contents, "XIXIXI", row["COMP2_XC_I"])
-    contents = replace_pattern_in_template(contents, "XZXZXZ", row["COMP2_XC_Z"])
-    contents = replace_pattern_in_template(contents, "YUYUYU", row["COMP2_YC_U"])
-    contents = replace_pattern_in_template(contents, "YGYGYG", row["COMP2_YC_G"])
-    contents = replace_pattern_in_template(contents, "YRYRYR", row["COMP2_YC_R"])
-    contents = replace_pattern_in_template(contents, "YIYIYI", row["COMP2_YC_I"])
-    contents = replace_pattern_in_template(contents, "YZYZYZ", row["COMP2_YC_Z"])
-    contents = replace_pattern_in_template(contents, "BKGU", row["COMP1_SKY_U"])
-    contents = replace_pattern_in_template(contents, "BKGG", row["COMP1_SKY_G"])
-    contents = replace_pattern_in_template(contents, "BKGR", row["COMP1_SKY_R"])
-    contents = replace_pattern_in_template(contents, "BKGI", row["COMP1_SKY_I"])
-    contents = replace_pattern_in_template(contents, "BKGZ", row["COMP1_SKY_Z"])
-    contents = replace_pattern_in_template(contents, "MMABU", str(float(mag_u) + 1.5))
-    contents = replace_pattern_in_template(contents, "MMABG", str(float(mag_g) + 1.5))
-    contents = replace_pattern_in_template(contents, "MMABR", str(float(mag_r) + 1.5))
-    contents = replace_pattern_in_template(contents, "MMABI", str(float(mag_i) + 1.5))
-    contents = replace_pattern_in_template(contents, "MMABZ", str(float(mag_z) + 1.5))
-    contents = replace_pattern_in_template(contents, "MMADU", str(float(mag_u) + 0.65))
-    contents = replace_pattern_in_template(contents, "MMADG", str(float(mag_g) + 0.65))
-    contents = replace_pattern_in_template(contents, "MMADR", str(float(mag_r) + 0.65))
-    contents = replace_pattern_in_template(contents, "MMADI", str(float(mag_i) + 0.65))
-    contents = replace_pattern_in_template(contents, "MMADZ", str(float(mag_z) + 0.65))
-    contents = replace_pattern_in_template(contents, "NNBG", str(
-        (float(n_u) + float(n_g) + float(n_r) + float(n_i) + float(n_z)) / 5))
-    contents = replace_pattern_in_template(contents, "ARDG", str(
-        (float(ar_u) + float(ar_g) + float(ar_r) + float(ar_i) + float(ar_g)) / 5))
-    contents = replace_pattern_in_template(contents, "REBU", str(float(re_u) * 0.3))
-    contents = replace_pattern_in_template(contents, "REBG", str(float(re_g) * 0.3))
-    contents = replace_pattern_in_template(contents, "REBR", str(float(re_r) * 0.3))
-    contents = replace_pattern_in_template(contents, "REBI", str(float(re_i) * 0.3))
-    contents = replace_pattern_in_template(contents, "REBZ", str(float(re_z) * 0.3))
-    contents = replace_pattern_in_template(contents, "REDU", str(float(re_u) * 1.5))
-    contents = replace_pattern_in_template(contents, "REDG", str(float(re_g) * 1.5))
-    contents = replace_pattern_in_template(contents, "REDR", str(float(re_r) * 1.5))
-    contents = replace_pattern_in_template(contents, "REDI", str(float(re_i) * 1.5))
-    contents = replace_pattern_in_template(contents, "REDZ", str(float(re_z) * 1.5))
+    search_replace = [
+    ("@@@@@@", galaxy_name),
+    ("WWWWWW", str(width)),
+    ("HHHHHH", str(height)),
+    ("ZPU", str(float(zpu))),
+    ("ZPG", str(float(zpg))),
+    ("ZPR", str(float(zpr))),
+    ("ZPI", str(float(zpi))),
+    ("ZPZ", str(float(zpz))),
+    ("XUXUXU", row["COMP2_XC_U"]),
+    ("XGXGXG", row["COMP2_XC_G"]),
+    ("XRXRXR", row["COMP2_XC_R"]),
+    ("XIXIXI", row["COMP2_XC_I"]),
+    ("XZXZXZ", row["COMP2_XC_Z"]),
+    ("YUYUYU", row["COMP2_YC_U"]),
+    ("YGYGYG", row["COMP2_YC_G"]),
+    ("YRYRYR", row["COMP2_YC_R"]),
+    ("YIYIYI", row["COMP2_YC_I"]),
+    ("YZYZYZ", row["COMP2_YC_Z"]),
+    ("BKGU", row["COMP1_SKY_U"]),
+    ("BKGG", row["COMP1_SKY_G"]),
+    ("BKGR", row["COMP1_SKY_R"]),
+    ("BKGI", row["COMP1_SKY_I"]),
+    ("BKGZ", row["COMP1_SKY_Z"]),
+    ("MMABU", str(float(mag_u) + 1.5)),
+    ("MMABG", str(float(mag_g) + 1.5)),
+    ("MMABR", str(float(mag_r) + 1.5)),
+    ("MMABI", str(float(mag_i) + 1.5)),
+    ("MMABZ", str(float(mag_z) + 1.5)),
+    ("MMADU", str(float(mag_u) + 0.65)),
+    ("MMADG", str(float(mag_g) + 0.65)),
+    ("MMADR", str(float(mag_r) + 0.65)),
+    ("MMADI", str(float(mag_i) + 0.65)),
+    ("MMADZ", str(float(mag_z) + 0.65)),
+    ("NNBG", str((float(n_u) + float(n_g) + float(n_r) + float(n_i) + float(n_z)) / 5)),
+    ("ARDG", str((float(ar_u) + float(ar_g) + float(ar_r) + float(ar_i) + float(ar_g)) / 5)),
+    ("REBU", str(float(re_u) * 0.3)),
+    ("REBG", str(float(re_g) * 0.3)),
+    ("REBR", str(float(re_r) * 0.3)),
+    ("REBI", str(float(re_i) * 0.3)),
+    ("REBZ", str(float(re_z) * 0.3)),
+    ("REDU", str(float(re_u) * 1.5)),
+    ("REDG", str(float(re_g) * 1.5)),
+    ("REDR", str(float(re_r) * 1.5)),
+    ("REDI", str(float(re_i) * 1.5)),
+    ("REDZ", str(float(re_z) * 1.5)),
+    ]
 
-    #        contents = replace_pattern_in_template(contents, "XXXXXX", str(float(width)/2))
-    #        contents = replace_pattern_in_template(contents, "YYYYYY", str(float(height)/2))
+    contents = solve_feedme_template(template, search_replace)
+
+    # ("XXXXXX", str(float(width)/2))
+    # ("YYYYYY", str(float(height)/2))
 
     feedme_filename = FEEDME_FILENAME_PREFIX+galaxy_name
     command = EXE_PATH+" "+feedme_filename
@@ -155,17 +159,7 @@ def job(galaxy_name):
 
 
 def main():
-    global OUTPUT_PATTERN, template, table
-    # Tries to figure out the output filename pattern from inside the template
-    with open(TEMPLATE_FILENAME, "r") as file:
-        for line in file:
-            if line.startswith("B)"):
-                pieces = line.split(" ")
-                OUTPUT_PATTERN = pieces[1].strip()
-                print("Found output filename pattern: '{}'".format(OUTPUT_PATTERN))
-                if not "@@@@@@" in OUTPUT_PATTERN:
-                    raise RuntimeError(
-                        "Could not figure out output pattern, sorry, gotta find new solution for this")
+    global output_pattern, template, table
 
     # # Extract all galaxy names
     ff = glob.glob(os.path.join(PATH, "psf*.fits"))
@@ -177,10 +171,12 @@ def main():
         galaxy_name = pieces[1]
         galaxy_names.append(galaxy_name)
     galaxy_names = list(set(galaxy_names))
+
     # # Reads some input data
     # template
     with open(TEMPLATE_FILENAME, "r") as file:
         template = file.read()
+        output_pattern = get_output_pattern(template)
     # Galaxy table in CSV format
     # COMMAND = "sed 's/[[:space:]]\{1,\}/,/g' ../outputs/output-mega-califa.txt > output-mega-califa.cvs"
     # open original file
@@ -194,7 +190,7 @@ def main():
     newtudo = re.sub('# +', '#', newtudo)
     # chances spaces for commas
     newtudo = re.sub(' +', ',', newtudo)
-    # open newfile (could be the same old one)
+    # Open newfile (could be the same old one)
     f2 = open('output-mega-califa.cvs', 'w')
     # write()
     f2.write(newtudo)
@@ -208,6 +204,7 @@ def main():
     # FEEDME_FILENAME = "galfit.feedme"
     # COMMAND = "./galfitm-1.2.1-linux-x86_64  "+FEEDME_FILENAME
     # flags = [job(galaxy_name) for galaxy_name in galaxy_names]
+
     p = mp.Pool(8)
     flags = p.map(job, galaxy_names)
     igal = sum(flags)

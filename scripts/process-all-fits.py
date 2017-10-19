@@ -3,32 +3,20 @@ import glob
 import os
 from ariastro import *
 import numpy
-import sys
 
+# TODO Write script docstring
 
 # # Definition of constants
-
-
 PROCESS_GALAXIES = True  # Simulation mode or fitting mode
 FEEDME_FILENAME = "galfit.feedme"
 TEMPLATE_FILENAME = "galfit.feedme.template"
 COMMAND = "./galfitm-1.2.1-linux-x86_64  " + FEEDME_FILENAME
 FILENAME_CSV_TABLE = "CALIFA_IDs_mfmtk693_T_ugriz.new.csv"
-
 # PATH = "./all-fits"
 PATH = "."
 
 def main():
-    # Tries to figure out the output filename pattern from inside the template
-    with open(TEMPLATE_FILENAME, "r") as file:
-        for line in file:
-            if line.startswith("B)"):
-                pieces = line.split(" ")
-                OUTPUT_PATTERN = pieces[1].strip()
-                print(("Found output filename pattern: '{}'".format(OUTPUT_PATTERN)))
-                if not "@@@@@@" in OUTPUT_PATTERN:
-                    raise RuntimeError(
-                        "Could not figure out output pattern, sorry, gotta find new solution for this")
+    global output_pattern, template, table
 
     # # Extract all galaxy names
     ff = glob.glob(os.path.join(PATH, "psf*.fits"))
@@ -40,10 +28,13 @@ def main():
         galaxy_name = pieces[1]
         galaxy_names.append(galaxy_name)
     galaxy_names = list(set(galaxy_names))
+
     # # Reads some input data
     # template
     with open(TEMPLATE_FILENAME, "r") as file:
         template = file.read()
+        output_pattern = get_output_pattern(template)
+
     # Galaxy table in CSV format
     table = load_jma_gri(FILENAME_CSV_TABLE)
     # # Runs script for all galaxies
@@ -55,7 +46,7 @@ def main():
         # If it is decided that it will not, a 'continue' statement will skip to the beginning of the next 'for' iteration
 
         # Test 0
-        output_filename = replace_pattern_in_template(OUTPUT_PATTERN, "@@@@@@", galaxy_name)
+        output_filename = output_pattern.replace("@@@@@@", galaxy_name)
         if os.path.isfile(output_filename):
             print(("**INFO**: output file '%s' already exists, skipping galaxy '%s' :)" % (
             output_filename, galaxy_name)))
@@ -137,37 +128,42 @@ def main():
         x0i, y0i = get_x0y0(os.path.join(PATH, galaxy_name + "_i.fits"))
         x0z, y0z = get_x0y0(os.path.join(PATH, galaxy_name + "_z.fits"))
 
-        contents = replace_pattern_in_template(template, "@@@@@@", galaxy_name)
-        contents = replace_pattern_in_template(contents, "WWWWWW", str(width))
-        contents = replace_pattern_in_template(contents, "HHHHHH", str(height))
-        contents = replace_pattern_in_template(contents, "ZPU", str(float(zpu)))
-        contents = replace_pattern_in_template(contents, "ZPG", str(float(zpg)))
-        contents = replace_pattern_in_template(contents, "ZPR", str(float(zpr)))
-        contents = replace_pattern_in_template(contents, "ZPI", str(float(zpi)))
-        contents = replace_pattern_in_template(contents, "ZPZ", str(float(zpz)))
-        contents = replace_pattern_in_template(contents, "XUXUXU", str(float(x0u)))
-        contents = replace_pattern_in_template(contents, "XGXGXG", str(float(x0g)))
-        contents = replace_pattern_in_template(contents, "XRXRXR", str(float(x0r)))
-        contents = replace_pattern_in_template(contents, "XIXIXI", str(float(x0i)))
-        contents = replace_pattern_in_template(contents, "XZXZXZ", str(float(x0z)))
-        contents = replace_pattern_in_template(contents, "YUYUYU", str(float(y0u)))
-        contents = replace_pattern_in_template(contents, "YGYGYG", str(float(y0g)))
-        contents = replace_pattern_in_template(contents, "YRYRYR", str(float(y0r)))
-        contents = replace_pattern_in_template(contents, "YIYIYI", str(float(y0i)))
-        contents = replace_pattern_in_template(contents, "YZYZYZ", str(float(y0z)))
-        contents = replace_pattern_in_template(contents, "BKGU", row["skybg_u"])
-        contents = replace_pattern_in_template(contents, "BKGG", row["skybg_g"])
-        contents = replace_pattern_in_template(contents, "BKGR", row["skybg_r"])
-        contents = replace_pattern_in_template(contents, "BKGI", row["skybg_i"])
-        contents = replace_pattern_in_template(contents, "BKGZ", row["skybg_z"])
-        contents = replace_pattern_in_template(contents, "MMAGU", row["u"])
-        contents = replace_pattern_in_template(contents, "MMAGG", row["g"])
-        contents = replace_pattern_in_template(contents, "MMAGR", row["r"])
-        contents = replace_pattern_in_template(contents, "MMAGI", row["i"])
-        contents = replace_pattern_in_template(contents, "MMAGZ", row["z"])
+        search_replace = [
+            ("@@@@@@", galaxy_name),
+            ("WWWWWW", str(width)),
+            ("HHHHHH", str(height)),
+            ("ZPU", str(float(zpu))),
+            ("ZPG", str(float(zpg))),
+            ("ZPR", str(float(zpr))),
+            ("ZPI", str(float(zpi))),
+            ("ZPZ", str(float(zpz))),
+            ("XUXUXU", str(float(x0u))),
+            ("XGXGXG", str(float(x0g))),
+            ("XRXRXR", str(float(x0r))),
+            ("XIXIXI", str(float(x0i))),
+            ("XZXZXZ", str(float(x0z))),
+            ("YUYUYU", str(float(y0u))),
+            ("YGYGYG", str(float(y0g))),
+            ("YRYRYR", str(float(y0r))),
+            ("YIYIYI", str(float(y0i))),
+            ("YZYZYZ", str(float(y0z))),
+            ("BKGU", row["skybg_u"]),
+            ("BKGG", row["skybg_g"]),
+            ("BKGR", row["skybg_r"]),
+            ("BKGI", row["skybg_i"]),
+            ("BKGZ", row["skybg_z"]),
+            ("MMAGU", row["u"]),
+            ("MMAGG", row["g"]),
+            ("MMAGR", row["r"]),
+            ("MMAGI", row["i"]),
+            ("MMAGZ", row["z"]),
+        ]
 
-        #        contents = replace_pattern_in_template(contents, "XXXXXX", str(float(width)/2))
-        #        contents = replace_pattern_in_template(contents, "YYYYYY", str(float(height)/2))
+        # ("XXXXXX", str(float(width)/2))
+        # ("YYYYYY", str(float(height)/2))
+
+
+        contents = solve_feedme_template(template, search_replace)
 
 
         with open(FEEDME_FILENAME, "w") as file:

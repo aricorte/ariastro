@@ -11,7 +11,6 @@ __all__ = [
 "FILENAME_NOT_RUN",
 "FILENAME_BAD_FIT",
 "isolate_code",
-"replace_pattern_in_template",
 "write_not_run",
 "write_bad_fit",
 "get_dims",
@@ -21,6 +20,8 @@ __all__ = [
 "find_row_by_galaxy_name",
 "find_row_by_galaxy_name2",
 "dump_header",
+"solve_feedme_template",
+"get_output_pattern",
 ]
 
 
@@ -35,12 +36,6 @@ def isolate_code():
 
     sys.exit("\n\nNot running this program again, sorry. \n\n"
              "This program was designed to run only once.\n\n")
-
-
-def replace_pattern_in_template(template, pattern, str_replace):
-    """pattern by galaxy name and returns new string"""
-    contents1 = template.replace(pattern, str_replace)
-    return contents1
 
 
 def write_not_run(galaxy_name, s):
@@ -156,3 +151,60 @@ def dump_header(filename):
 
     n = len(hdulist)
     print("\nWrote {} frame{} to file '{}'".format(n, "" if n == 1 else "s", output_filename))
+
+
+
+
+
+####################################################################################################
+#   _____          _      ______ _____ _______
+#  / ____|   /\   | |    |  ____|_   _|__   __| http://patorjk.com/software/taag/#p=display&f=Big&t=GALFIT
+# | |  __   /  \  | |    | |__    | |    | |
+# | | |_ | / /\ \ | |    |  __|   | |    | |
+# | |__| |/ ____ \| |____| |     _| |_   | |
+#  \_____/_/    \_\______|_|    |_____|  |_|
+# GALFIT TEMPLATE HANDLING
+#
+
+
+def solve_feedme_template(template, search_replace):
+    """
+    Replaces all patterns in template text, returning a (hopefully) sane GALFIT FEEDME text
+
+    Args:
+        template: template text
+        search_replace: [(search0, replace0), (search1, replace1), ...], i.e., search-replace pairs
+
+    Returns:
+        str: contents
+    """
+
+    contents = template
+    for pattern, str_replace in search_replace:
+        contents = contents.replace(pattern, str_replace)
+
+    return contents
+
+
+def get_output_pattern(template):
+    """Tries to figure out (extract) the output filename pattern from inside the template
+
+    Returns:
+        str: output pattern containing string "@@@@@@"
+
+    I am looking for a line in galfit.feedme.template that looks like
+
+    ```
+    B) ../outputs/@@@@@@_ss.fits       # Output data image block
+    ```
+    """
+
+    for line in template.split("\n"):
+        if line.startswith("B)"):
+            pieces = line.split(" ")
+            ret = pieces[1].strip()
+            print("Found output filename pattern: '{}'".format(ret))
+            if "@@@@@@" in ret:
+                return ret
+
+    raise RuntimeError("Could not figure out output pattern, sorry, gotta find new solution for this")

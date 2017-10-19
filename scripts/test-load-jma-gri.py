@@ -1,8 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-from ariastro import library
+import ariastro
 
-A = library.load_jma_gri("CALIFA-JMA-gri.mfmtk")
+ariastro.isolate_code()
+
+A = ariastro.load_jma_gri("CALIFA-JMA-gri.mfmtk")
 
 
 

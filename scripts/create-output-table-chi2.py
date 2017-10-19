@@ -10,7 +10,7 @@ import os
 import multiprocessing as mp
 
 
-def read_output(filename):
+def read_output_chi2(filename):
     """
     Reads FITS file and extracts selected information from penultimate frame data
 
@@ -31,7 +31,7 @@ def read_output(filename):
 
     Usage example:
 
-        >>> ret = read_output("CGCG163-062_ss.fits")
+        >>> ret = read_output_chi2("CGCG163-062_ss.fits")
         >>> print(ret)
         TODO get output and paste here
     """
@@ -39,34 +39,66 @@ def read_output(filename):
     print(("Processing file '{}'".format(filename)))
 
     hdulist = fits.open(filename)
-    data = hdulist[-2].data
-    fields_to_extract = [field_name for field_name, __ in data.dtype.descr][1:]
-    band_names = [x.upper() for x in data["BAND"]]
+    data = hdulist[-4].data
+    fields_to_extract = [field_name for field_name, __ in data.dtype.descr][1:-1]
+#    band_names = [x.upper() for x in data["BAND"]]
 
     ret = OrderedDict()
     for field_name in fields_to_extract:
-        for i, band_name in enumerate(band_names):
-            ret[field_name+"_"+band_name] = data[i][field_name]
+#        for i, band_name in enumerate(band_names):
+        ret[field_name] = data[field_name]
+            # expr = hdulist[-2].header[field_name]
+            #
+            # # if expr.startswith("*"):
+            # if "*" in expr:
+            #     msg = "Invalid value for header '{}': '{}'".format(field_name, expr)
+            #     raise RuntimeError(msg)
+            #     # flag_invalid = True
+            #     # break
+            #     # print expr, name, filename
+            #     # continue
+            #
+            # # Matches pattern such as '15.7492 +/- 0.0026'
+            # gg = re.match("([0-9.-]+)\s*\+/-\s*([0-9.-]+)", expr)
+            #
+            # if gg is not None:
+            #     value, error = gg.groups()
+            #     # We know that it is a (value, error) pair
+            #     # print expr
+            #
+            # elif expr.startswith("["):
+            #     value = expr.strip()[1:-1]
+            #     error = '0.'
+            # else:
+            #     value = expr
+            #     error = '0.'
+            #
+            # ret[field_name] = value
+            # ret[field_name + "_ERROR"] = error
 
     hdulist.close()
 
     return ret
 
-
-def create_output_table(dir_=".", output_filename="output-mega-califa.txt"):
+def create_output_table_chi2(dir_=".", output_filename="output-mega-califa_chi2.txt"):
     """
     Reads all files in directory specified and saves as a txt file
 
     Returns: number of fits files written
 
-    >>> create_output_table(".")
+    >>> create_output_table_chi2(".")
     3
     """
 
     filenames = glob.glob(os.path.join(dir_, "*.fits"))
 
+    print(("test'".format(filenames)))
+
+    #parada = raw_input('paused')
+
+
     p = mp.Pool(8)
-    rows = p.map(read_output, filenames)
+    rows = p.map(read_output_chi2, filenames)
 
     num_files = len(filenames)
     # print files
@@ -78,7 +110,7 @@ def create_output_table(dir_=".", output_filename="output-mega-califa.txt"):
             if n == 0:
                 out.write("#" " " + "galaxy_name" + " " + " ".join(list(data.keys())) + "\n")
 
-            out.write(galaxy_name + " " + " ".join([str(x) for x in list(data.values())]) + "\n")
+            out.write(str(galaxy_name) + " " + " ".join([str(x) for x in list(data.values())]) + "\n")
 
             n += 1
 
@@ -87,6 +119,5 @@ def create_output_table(dir_=".", output_filename="output-mega-califa.txt"):
 
     return n
 
-
 if __name__ == "__main__":
-    create_output_table(".")
+    create_output_table_chi2(".")

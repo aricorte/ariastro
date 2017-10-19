@@ -17,8 +17,12 @@ import glob
 import f311.filetypes as ft
 import f311.explorer as ex
 import a99
+import sys
+import ariastro
 
 if __name__ == "__main__":
+    ariastro.isolate_code()
+
     filenames = glob.glob("*.fits")
 
     for filename in filenames:

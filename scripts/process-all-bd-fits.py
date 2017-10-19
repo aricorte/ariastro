@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import glob
 import os
@@ -6,6 +6,7 @@ import sys
 import numpy
 from ariastro import *
 import multiprocessing as mp
+import re
 
 
 CALL_GALFIT = True  # Simulation mode or fitting mode
@@ -14,83 +15,8 @@ TEMPLATE_FILENAME = "galfit.feedme.template.br"
 EXE_PATH = "./galfitm-1.2.1-linux-x86_64"  # path to the Galfit executable file
 FILENAME_TXT_TABLE = "../outputs/output-mega-califa-may.txt"
 
-
-
-#Tries to figure out the output filename pattern from inside the template
-with open(TEMPLATE_FILENAME, "r") as file:
-    for line in file:
-        if line.startswith("B)"):
-            pieces = line.split(" ")
-            OUTPUT_PATTERN = pieces[1].strip()
-            print("Found output filename pattern: '{}'".format(OUTPUT_PATTERN))
-            if not "@@@@@@" in OUTPUT_PATTERN:
-                raise RuntimeError("Could not figure out output pattern, sorry, gotta find new solution for this")
-
-
-def replace_pattern_in_template(template, pattern, str_replace):
-    """pattern by galaxy name and returns new string"""
-    contents1 = template.replace(pattern, str_replace)
-    return contents1
-
-
-
 # PATH = "./all-fits"
 PATH = "."
-
-# # Extract all galaxy names
-ff = glob.glob(os.path.join(PATH, "psf*.fits"))
-galaxy_names = []
-for f in ff:
-    filename = os.path.basename(f)
-    # print filename
-    pieces = filename.split("_")
-    galaxy_name = pieces[1]
-    galaxy_names.append(galaxy_name)
-
-galaxy_names = list(set(galaxy_names))
-
-
-
-# # Reads some input data
-# template 
-with open(TEMPLATE_FILENAME, "r") as file:
-  template = file.read()
-# Galaxy table in CSV format
-#COMMAND = "sed 's/[[:space:]]\{1,\}/,/g' ../outputs/output-mega-califa.txt > output-mega-califa.cvs"
-#open original file
-f = open(FILENAME_TXT_TABLE)
-
-#reads everything in a string
-tudo = f.read()
-
-# replace what you want (may use regexp)
-newtudo = tudo.replace('[', '').replace(']', '')
-
-import re
-#removes spaces at the end of lines
-newtudo = re.sub(' +\n', '\n', newtudo)
-newtudo = re.sub('# +', '#', newtudo)
-#chances spaces for commas
-newtudo = re.sub(' +', ',', newtudo)
-
-#open newfile (could be the same old one)
-f2 = open('output-mega-califa.cvs','w')
-#write()
-f2.write(newtudo)
-f2.close()
-
-table = load_jma_gri("output-mega-califa.cvs")
-
-# print table[0]
-# sys.exit()
-#p = mp.Pool(8)
-#rows = p.map(f,galaxy_name)
-
-# # Runs script for all galaxies
-#FEEDME_FILENAME = "galfit.feedme"
-#COMMAND = "./galfitm-1.2.1-linux-x86_64  "+FEEDME_FILENAME
-
-
 
 
 def job(galaxy_name):
@@ -228,20 +154,66 @@ def job(galaxy_name):
     return True
 
 
+def main():
+    global OUTPUT_PATTERN, template, table
+    # Tries to figure out the output filename pattern from inside the template
+    with open(TEMPLATE_FILENAME, "r") as file:
+        for line in file:
+            if line.startswith("B)"):
+                pieces = line.split(" ")
+                OUTPUT_PATTERN = pieces[1].strip()
+                print("Found output filename pattern: '{}'".format(OUTPUT_PATTERN))
+                if not "@@@@@@" in OUTPUT_PATTERN:
+                    raise RuntimeError(
+                        "Could not figure out output pattern, sorry, gotta find new solution for this")
 
-# flags = [job(galaxy_name) for galaxy_name in galaxy_names]
+    # # Extract all galaxy names
+    ff = glob.glob(os.path.join(PATH, "psf*.fits"))
+    galaxy_names = []
+    for f in ff:
+        filename = os.path.basename(f)
+        # print filename
+        pieces = filename.split("_")
+        galaxy_name = pieces[1]
+        galaxy_names.append(galaxy_name)
+    galaxy_names = list(set(galaxy_names))
+    # # Reads some input data
+    # template
+    with open(TEMPLATE_FILENAME, "r") as file:
+        template = file.read()
+    # Galaxy table in CSV format
+    # COMMAND = "sed 's/[[:space:]]\{1,\}/,/g' ../outputs/output-mega-califa.txt > output-mega-califa.cvs"
+    # open original file
+    f = open(FILENAME_TXT_TABLE)
+    # reads everything in a string
+    tudo = f.read()
+    # replace what you want (may use regexp)
+    newtudo = tudo.replace('[', '').replace(']', '')
+    # removes spaces at the end of lines
+    newtudo = re.sub(' +\n', '\n', newtudo)
+    newtudo = re.sub('# +', '#', newtudo)
+    # chances spaces for commas
+    newtudo = re.sub(' +', ',', newtudo)
+    # open newfile (could be the same old one)
+    f2 = open('output-mega-califa.cvs', 'w')
+    # write()
+    f2.write(newtudo)
+    f2.close()
+    table = load_jma_gri("output-mega-califa.cvs")
+    # print table[0]
+    # sys.exit()
+    # p = mp.Pool(8)
+    # rows = p.map(f,galaxy_name)
+    # # Runs script for all galaxies
+    # FEEDME_FILENAME = "galfit.feedme"
+    # COMMAND = "./galfitm-1.2.1-linux-x86_64  "+FEEDME_FILENAME
+    # flags = [job(galaxy_name) for galaxy_name in galaxy_names]
+    p = mp.Pool(8)
+    flags = p.map(job, galaxy_names)
+    igal = sum(flags)
+    print("I fit", igal, "galaxies")
 
-p = mp.Pool(8)
-flags = p.map(job, galaxy_names)
 
-
-igal = sum(flags)
-
-##Read outputs from the SS fit
-#create_output_table("../outputs")
-#sys.exit()
-
-print("I fit", igal,"galaxies")
-
-#    pieces = os.path.basename(f)
+if __name__ == "__main__":
+    main()
 

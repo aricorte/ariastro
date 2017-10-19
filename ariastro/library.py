@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-__all__ = ["get_dims", "load_jma_gri", "find_row_by_galaxy_name", "find_row_by_galaxy_name2", "read_output",
-           "create_output_table", "get_exptime", "write_bad_fit", "write_not_run","get_x0y0","fromNMAGYtoCOUNTs"]
-
->>>>>>> cea9dc9031b637028a0597cea50394f5b10f47c1
 import numpy as np
 
 from astropy.io import fits
@@ -13,22 +7,10 @@ import os
 import re
 import multiprocessing as mp
 
-__all__ = [
-"FILENAME_NOT_RUN",
-"FILENAME_BAD_FIT",
-"isolate_code",
-"write_not_run",
-"write_bad_fit",
-"get_dims",
-"get_exptime",
-"get_x0y0",
-"load_jma_gri",
-"find_row_by_galaxy_name",
-"find_row_by_galaxy_name2",
-"dump_header",
-"solve_feedme_template",
-"get_output_pattern",
-]
+__all__ = ["FILENAME_NOT_RUN", "FILENAME_BAD_FIT", "isolate_code", "write_not_run", "write_bad_fit",
+           "get_dims", "get_exptime", "get_x0y0", "load_jma_gri", "find_row_by_galaxy_name",
+           "find_row_by_galaxy_name2", "dump_header", "solve_feedme_template", "get_output_pattern",
+           "fromNMAGYtoCOUNTs", ]
 
 
 FILENAME_NOT_RUN = "not-run.csv"
@@ -159,7 +141,33 @@ def dump_header(filename):
     print("\nWrote {} frame{} to file '{}'".format(n, "" if n == 1 else "s", output_filename))
 
 
+def fromNMAGYtoCOUNTs(dir_="."):
+    """Transforms NMAGYS into counts for both PSFS and images"""
 
+    ff = glob.glob(os.path.join(dir_, "*.fits"))
+    # file_names=[]
+    # for f in ff
+
+    # filename = os.path.basaname(f)
+    # pieces = filename.split("_")
+    # file_name = pieces[1]
+    # file_names.append(f)
+
+    # file_names = list(set(file_names))
+
+
+    for file_name in ff:
+        print("Converting {}".format(file_name))
+        hdulist = fits.open(file_name)
+
+        med = np.mean(hdulist[0].data)
+        print("Mmmmmmmmmmmmm {}".format(med))
+        hdulist[0].data /= 0.00449599
+
+        os.unlink(file_name)
+
+        hdulist.writeto(file_name)
+        hdulist.close()
 
 
 ####################################################################################################
@@ -205,7 +213,6 @@ def get_output_pattern(template):
     ```
     """
 
-<<<<<<< HEAD
     for line in template.split("\n"):
         if line.startswith("B)"):
             pieces = line.split(" ")
@@ -215,46 +222,3 @@ def get_output_pattern(template):
                 return ret
 
     raise RuntimeError("Could not figure out output pattern, sorry, gotta find new solution for this")
-=======
-    hdulist = fits.open(filename)
-
-    output_filename = filename + ".txt"
-
-    with open(output_filename, "w") as f:
-        i = 0
-        for hdu in hdulist:
-            f.write("\n\n***** FRAME %02d *****\n" % i)
-            f.write(repr(hdu.header) + "\n")
-            i += 1
-
-def fromNMAGYtoCOUNTs(dir_="."):
-    """Transforms NMAGYS into counts for both PSFS and images"""
-
-    ff = glob.glob(os.path.join(dir_, "*.fits"))
-    #file_names=[]
-    #for f in ff
-
-    #filename = os.path.basaname(f)
-    #pieces = filename.split("_")
-    #file_name = pieces[1]
-        #file_names.append(f)
-
-    #file_names = list(set(file_names))
-
-    
-    for file_name in ff:
-        print("Converting {}".format(file_name))
-        hdulist = fits.open(file_name)
-
-        med = np.mean(hdulist[0].data)
-        print("Mmmmmmmmmmmmm {}".format(med))
-        hdulist[0].data /= 0.00449599
-
-        os.unlink(file_name)
-        
-        hdulist.writeto(file_name)
-        hdulist.close()
-        
-
-    
->>>>>>> cea9dc9031b637028a0597cea50394f5b10f47c1

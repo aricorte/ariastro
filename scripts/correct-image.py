@@ -5,4 +5,5 @@ This script should be probably run from the 'outputs' directory or similar
 
 from ariastro import *
 
-fromNMAGYtoCOUNTs(".")
+if __name__ == "__main__":
+    fromNMAGYtoCOUNTs(".")

@@ -21,8 +21,7 @@ import sys
 import ariastro
 
 if __name__ == "__main__":
-    ariastro.isolate_code()
-
+    
     filenames = glob.glob("*.fits")
 
     for filename in filenames:

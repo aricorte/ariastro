@@ -69,3 +69,12 @@
 [INFO    ] AUTO LOAD: max file size: 1.25829e+06
 [INFO    ] Imported collaborator package 'f311.filetypes'
 [INFO    ] Imported collaborator package 'f311.explorer'
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-11-08 12:26:13 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] AUTO LOAD: max file size: 1.25829e+06
+[INFO    ] Imported collaborator package 'f311.filetypes'
+[INFO    ] Imported collaborator package 'f311.explorer'
+[INFO    ] Imported collaborator package 'convmolworks'

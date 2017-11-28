@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc1cddf5-b1ba-4a7b-be80-8c8c6ef3cf3b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ariastro/filegalfit.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ariastro/visgalfit.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data-test/3115_allfree_1disk_C02PA1BA1.fits.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/RGBImage.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/correct-image.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/create-output-table.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/create-output-table_bd.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/create-output-table_chi2.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/dump-header.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/galfit-fits-to-png.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/galfitm-1.2.1-linux-x86_64" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/plot-colour.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/plot-comp.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/process-all-bd-fits.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/process-all-exp-fits.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/process-all-fits.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/test-galfit-to-png.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/test-load-jma-gri.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ariastro/__init__.py" afterPath="$PROJECT_DIR$/ariastro/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data-test/test-to-png/python.log" afterPath="$PROJECT_DIR$/data-test/test-to-png/python.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
     </list>
     <ignored path="CALIFA.iws" />
@@ -53,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="visgalfit.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="visgalfit.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ariastro/visgalfit.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -87,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -168,10 +149,10 @@
         <option value="$PROJECT_DIR$/data-test/.gitignore" />
         <option value="$PROJECT_DIR$/ariastro/vis_uroboros.py" />
         <option value="$PROJECT_DIR$/ariastro/__init__.py" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/ariastro/filegalfit.py" />
         <option value="$PROJECT_DIR$/ariastro/scripts/galfit-fits-to-png.py" />
         <option value="$PROJECT_DIR$/ariastro/visgalfit.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
@@ -808,14 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="77" selection-start-line="10" selection-start-column="77" selection-end-line="10" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/1582271885/numpy/core/umath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -852,6 +825,14 @@
           <folding>
             <marker date="1511622821918" expanded="true" signature="12:116" ph="import ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="77" selection-start-line="10" selection-start-column="77" selection-end-line="10" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>

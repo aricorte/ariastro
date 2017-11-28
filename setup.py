@@ -8,6 +8,6 @@ setup(
     license = 'GNU GPLv3',
     platforms = 'any',
     description = 'Ari Astro tools',
-    install_requires = ['numpy', 'astropy', 'matplotlib', 'f311>=0.17.11.25.0'],
+    install_requires = ['numpy', 'astropy', 'matplotlib', 'f311>=0.17.11.25.1'],
     scripts = glob('ariastro/scripts/*.py')  # Considers system scripts all .py files in 'ariastro/scripts' directory
 )

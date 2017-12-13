@@ -1,6 +1,6 @@
 # INSTALL BUTTERFLY IN ALPHACRUCIS (you need to have access to the cluster)
 
-## 1) load python3 in alphacrucis
+## 1) load python3 in uv30
 ```
 module load anaconda/3-2.5.0/python-3.5 
 ```

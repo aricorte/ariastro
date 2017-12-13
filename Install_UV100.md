@@ -31,11 +31,24 @@ To deactivate the environment:
 source deactivate
 ```
 
-## 4) install our version of MegaMorph
+## 3) install our version of MegaMorph
 
 ```
 git clone -b butterfly git@github.com:aricorte/ariastro.git
 ```
+if not working 
+
+1) go to https://github.com/aricorte/ariastro 
+2) clic on "Clone or download" and choose "Download zip"
+3) copy the zip in the directory where you want to use it
+4) unzip *.zip
+
+## 4) make the programs ready to run in every directory
+
+cd ariastro-butterfly
+sudo python setup.py develop
+cd ariastro/scripts
+chmod +x *.py
 
 ## 5) always keep your data and output in silo1
 

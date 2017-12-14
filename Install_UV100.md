@@ -1,4 +1,8 @@
 # INSTALL BUTTERFLY IN ALPHACRUCIS (you need to have access to the cluster)
+#This program is a python wrap of GALFITM () and it can be used in two ways:
+#1) running GALFITM on a set of stamp with given PSF and input table of initial parameters (examples can be found here)
+#2) create images and plots starting from GALFITM outputs, as fits tables and images (example can be found here)
+
 
 ## 1) load python3 in uv30
 ```
@@ -16,7 +20,7 @@ conda create --name astroenv python=3.5
 source activate astroenv
 ```
 ```
-pip install f311
+pip install f311 ....
 ```
 
 Note Every time you want to work with F311, you will need to activate the environment:

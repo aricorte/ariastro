@@ -187,3 +187,15 @@ AttributeError: 'function' object has no attribute 'info'
 [INFO    ] Imported collaborator package 'f311.explorer'
 [INFO    ] Imported collaborator package 'convmolworks'
 [INFO    ] Imported collaborator package 'ariastro'
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-12-15 20:27:40 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] AUTO LOAD: max file size: 1.25829e+06
+[INFO    ] Imported collaborator package 'f311'
+[INFO    ] Imported collaborator package 'pyfant'
+[INFO    ] Imported collaborator package 'pyfant'
+[INFO    ] Imported collaborator package 'aosss'
+[INFO    ] Imported collaborator package 'convmolworks'
+[INFO    ] Imported collaborator package 'ariastro'

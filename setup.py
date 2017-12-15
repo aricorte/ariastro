@@ -4,7 +4,7 @@ from glob import glob
 setup(
     name = 'ariastro',
     packages = find_packages(),
-    version = '0.17.11.25.0',
+    version = '0.17.12.15.j0',
     license = 'GNU GPLv3',
     platforms = 'any',
     description = 'Ari Astro tools',

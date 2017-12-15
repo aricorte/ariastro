@@ -15,8 +15,25 @@ __all__ = ["FILENAME_NOT_RUN", "FILENAME_BAD_FIT", "isolate_code", "write_not_ru
 
 FILENAME_NOT_RUN = "not-run.csv"
 FILENAME_BAD_FIT = "bad-fit.csv"
-_file_not_run = open(FILENAME_NOT_RUN, "w")
-_file_bad_fit = open(FILENAME_BAD_FIT, "w")
+
+_file_not_run = None
+_file_bad_fit = None
+
+def get_file_not_run():
+    """Gets "not_run" file object. Opens file at first call, otherwire returns open file"""
+    global _file_not_run
+    if _file_not_run is None:
+        _file_not_run = open(FILENAME_NOT_RUN, "w")
+    return _file_not_run
+
+
+def get_file_bad_fit():
+    """Gets "bad_fit" file object. Opens file at first call, otherwire returns open file"""
+    global _file_bad_fit
+    if _file_bad_fit is None:
+        _file_bad_fit = open(FILENAME_BAD_FIT, "w")
+    return _file_bad_fit
+
 
 def isolate_code():
     """Exits the program showing message. Easy way to protect test/conversion scripts from running again"""
@@ -28,12 +45,12 @@ def isolate_code():
 
 def write_not_run(galaxy_name, s):
     """Writes line to "not run" log file"""
-    _file_not_run.write('%-40s,"%s"\n' % (galaxy_name, s))
+    get_file_not_run().write('%-40s,"%s"\n' % (galaxy_name, s))
 
 
 def write_bad_fit(galaxy_name, s):
     """Writes line to "bad fit" log file"""
-    _file_bad_fit.write('%-40s,"%s"\n' % (galaxy_name, s))
+    get_file_bad_fit().write('%-40s,"%s"\n' % (galaxy_name, s))
 
 
 def get_dims(filename):

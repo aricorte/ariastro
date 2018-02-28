@@ -4,11 +4,29 @@
 
 
 
-### Set the path to `galfitm-1.2.1-linux-x86_64`
+### Set the path to GalFit executable
+
+Next we will show you how to create a link named ```galfitm```that will be invoked by ```ariastro``` when needed. This link, in turn, must point to an existing GalFit executable, and it has to be in your system path. Below there is an example to be done if you have sudo access on your machine.
 
 ```shell
-cd /usr/local/bin
-sudo ln -s <path-to-galfit>/galfitm-1.2.1-linux-x86_64
+cd /usr/local/bin  # or other directory that is already in your path
+sudo ln -s <path-to-galfit-executable> galfitm
+```
+
+#### no-sudo Alternative
+
+If you don't have sudo access, you may try some of the following:
+
+```shell
+cd  # chances to home directory
+mkdir bin
+cd bin
+ln -s <path-to-galfit-executable> galfitm
+```
+Then add the following line to your file ```~/.bashrc```:
+
+```shell
+export PATH="${PATH}:~/bin"
 ```
 
 ### Install `ariastro` package and scripts

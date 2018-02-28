@@ -1,4 +1,6 @@
-# INSTALL ```ariastro``` IN ALPHACRUCIS (you need to have access to the cluster)
+# INSTALL ```ariastro``` IN UV30 (you need to have access to the cluster)
+
+If you have already followed the installation steps, jump to the end of the file, where there is a list of commands to set up the environment when you log onto the UV30 again.
 
 ### This program is a python wrap of GALFITM () and it can be used in two ways:
 
@@ -71,6 +73,15 @@ Conecte-se na alphacrucis e crie um diretório para o ponto de montagem
 ```
 mkdir silo1
 sshfs <USER>@silo1.iag.usp.br:/sto/home/usuário ./silo1
+```
+
+## If you have already installed
+
+Here is the list of commands to type next time you log onto UV30:
+
+```
+module load anaconda/3-2.5.0/python-3.5 
+source activate astroenv
 ```
 
 BE HAPPY

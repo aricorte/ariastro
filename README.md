@@ -35,6 +35,35 @@ Then add the following line to your file ```~/.bashrc```:
 export PATH="${PATH}:~/bin"
 ```
 
+## 1) load python3 in uv30
+```
+module load anaconda/3-2.5.0/python-3.5 
+```
+(https://lai.iag.usp.br/projects/lai/wiki/FAQ)
+
+
+## 2) install "ariastro" Python package and create Anaconda virtual environment "astroenv" (or other name you like)
+
+```
+conda create --name astroenv python=3.5
+source activate astroenv
+```
+```
+pip install ariastro
+```
+
+Note Every time you want to work with F311, you will need to activate the environment:
+
+```
+source activate astroenv
+```
+
+To deactivate the environment:
+
+```
+source deactivate
+```
+
 ### Install `ariastro` package and scripts
 
 ```shell

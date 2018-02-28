@@ -64,51 +64,15 @@ To deactivate the environment:
 source deactivate
 ```
 
-### Install `ariastro` package and scripts
+## If you have already installed
 
-```shell
-cd CALIFA/github
-sudo python setup.py develop
-cd scripts
-chmod +x *.py
-```
-
-
-
-## How to setup GitHub project
-
-### On GitHub
-
-Create project `ariastro`
-
-### Local machine
-
-#### Setup git 
-
-```shell
-git init
-git remote add origin ssh://git@github.com/aricorte/ariastro.git
-```
-
-:notes: It is necessary to setup SSH key: please check https://github.com/trevisanj/oblivion/blob/master/github-ssh.md
-
-#### Create commits 
+Here is the list of commands to type next time you log onto UV30:
 
 ```
-git add . --all
-git commit -m "first commit"
-git push
+module load anaconda/3-2.5.0/python-3.5 
+source activate astroenv
 ```
-git status
-git add .--all
-git commit -m "blah blah"
-git push
 
-## PyCharm shortcuts
+BE HAPPY
 
-  - rename file: Shift+F6
-  - find file by name: Ctrl+Shift+N
 
-## Astroenv
-  
-   source activate astroenv

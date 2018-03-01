@@ -46,3 +46,7 @@ git push
 ## Astroenv
   
    source activate astroenv
+   
+ ### useful commands
+ find . -iname "*fits" -exec cp "{}" /../all-fits \;
+ 

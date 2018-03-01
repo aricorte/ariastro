@@ -71,6 +71,20 @@ To deactivate the environment:
 ```
 source deactivate
 ```
+## 3) If you are using UV30 always keep your data and output in silo1
+
+https://lai.iag.usp.br/projects/lai/wiki/FAQ (Como eu crio um ponto de montagem usando sshfs?)
+
+```
+ssh <USER>@silo1.iag.usp.br
+exit
+```
+
+Conecte-se na UV30 e crie um diretório para o ponto de montagem
+```
+mkdir silo1
+sshfs <USER>@silo1.iag.usp.br:/sto/home/usuário ./silo1
+```
 
 ## If you have already installed
 

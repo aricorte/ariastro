@@ -1,14 +1,18 @@
 # `ariastro - being updated`
 
-### This program is a python wrap of GALFITM () and it can be used in two ways:
+### This program is a python wrap of GALFITM (https://www.nottingham.ac.uk/astronomy/megamorph/) and it can be used in two ways:
 
-### 1) running GALFITM on a set of stamp with given PSF and input table of initial parameters (examples can be found here)
+### 1) running GALFITM on a set of stamps with given PSF and input table of initial parameters - including background (examples can be found here)
 
-### 2) create images and plots starting from GALFITM outputs, as fits tables and images (example can be found here)
+### 2) create images and plots starting from GALFITM outputs, as fits tables and images (examples can be found here)
 
-### In here we explain how to install it (NB you need to have anaconda installed in your computer) 
+### In here we explain how to install it (NB you need to have anaconda and python 3.6 installed in your computer) 
 
 ## Installation
+
+### Download GALFITM
+
+Dwonload the appropriate GALFITM from https://www.nottingham.ac.uk/astronomy/megamorph/
 
 ### Set the path to GalFit executable
 

@@ -1,4 +1,8 @@
-# `ariastro - being updated`
+# INSTALL ```ariastro``` 
+
+In here we specifically focus on istalling it in UV30 (you need to have access to the cluster), but the same instructions will work for any computer with installed python 3.6 and anaconda. 
+
+If you have already followed the installation steps, jump to the end of the file, where there is a list of commands to set up the environment when you log onto the UV30 (or any other machine) again.
 
 ### This program is a python wrap of GALFITM (https://www.nottingham.ac.uk/astronomy/megamorph/) and it can be used in two ways:
 
@@ -39,7 +43,7 @@ Then add the following line to your file ```~/.bashrc```:
 export PATH="${PATH}:~/bin"
 ```
 
-## 1) load python3 in uv30
+## 1) load python3 in uv30 (no need if you are installing it in your own machine)
 ```
 module load anaconda/3-2.5.0/python-3.5 
 ```

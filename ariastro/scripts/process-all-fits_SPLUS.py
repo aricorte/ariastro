@@ -19,7 +19,7 @@ def main():
     global output_pattern, template, table
 
     # # Extract all galaxy names
-    ff = glob.glob(os.path.join(PATH, "psf*.fits"))
+    ff = glob.glob(os.path.join(PATH, "*.fits"))
     galaxy_names = []
     for f in ff:
         filename = os.path.basename(f)

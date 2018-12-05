@@ -10,7 +10,7 @@ import multiprocessing as mp
 __all__ = ["FILENAME_NOT_RUN", "FILENAME_BAD_FIT", "isolate_code", "write_not_run", "write_bad_fit",
            "get_dims", "get_exptime", "get_x0y0", "get_nmgy", "load_jma_gri", "find_row_by_galaxy_name",
            "find_row_by_galaxy_name2", "dump_header", "solve_feedme_template", "get_output_pattern",
-           "fromNMAGYtoCOUNTs"]
+           "fromNMAGYtoCOUNTs","make_psf","get_psf_data","make_psf"]
 
 
 FILENAME_NOT_RUN = "not-run.csv"
@@ -89,6 +89,13 @@ def get_nmgy(filename):
     hdulist.close()
     return ret
                         
+def get_psf_data(filename):
+    """Returns x0,y0 from image header"""
+    hdulist = fits.open(filename)
+    hdu = hdulist[0]
+    ret = (hdu.header["HIERARCH OAJ PRO FWHMMEAN"],hdu.header["HIERARCH OAJ PRO FWHMBETA"])
+    hdulist.close()
+    return ret
 
 
 def load_jma_gri(filename):
@@ -200,9 +207,9 @@ def fromNMAGYtoCOUNTs(dir_="."):
         hdulist.close()
 
 
-def make_psf(fwhm, beta, radius, outfile="psf.fits"):
-    import numpy as np
-    from astropy.io import fits as pf
+def make_psf(fwhm, beta, radius, outfile):
+#    import numpy as np
+#   from astropy.io import fits as pf
     alpha = fwhm / (2 * np.sqrt(np.power(2., 1/beta) - 1.))
     r = np.linspace(-radius, radius, 2 * radius + 1)
     print(r)
@@ -213,7 +220,7 @@ def make_psf(fwhm, beta, radius, outfile="psf.fits"):
     hdu = pf.PrimaryHDU(I)
     hdulist = pf.HDUList([hdu])
     hdulist.writeto(outfile, clobber=True)
-    return
+    return ret
 
 
 ####################################################################################################

@@ -78,3 +78,162 @@
 [INFO    ] Imported collaborator package 'f311.filetypes'
 [INFO    ] Imported collaborator package 'f311.explorer'
 [INFO    ] Imported collaborator package 'convmolworks'
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2018-05-04 12:27:14 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F378' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F395' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F410' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F430' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_G' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F515' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_R' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F660' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_I' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F861' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_Z' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_FUV' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_NUV' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_R' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_J' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_H' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_K' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_3.4' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_4.6' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_U' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_G' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_R' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_I' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_Z' not found."
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2018-05-07 15:45:19 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F378' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F395' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F410' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F430' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_G' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F515' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_R' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F660' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_I' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F861' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_Z' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_FUV' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_NUV' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_R' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_J' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_H' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_K' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_3.4' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_4.6' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_U' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_G' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_R' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_I' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_Z' not found."
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2018-06-11 18:42:01 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F378' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F395' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F410' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F430' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_G' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F515' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_R' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F660' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_I' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F861' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_Z' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_FUV' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_NUV' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_R' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_J' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_H' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_K' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_3.4' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '3115_allfree_1disk_C02PA1BA1.fits': "Keyword '2_RS_4.6' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_U' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_G' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_R' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_I' not found."
+[INFO    ] Found keyword '2_RE_0', number is 2
+[WARNING ] File '1237668494708178979_ss.fits': "Keyword '2_RS_Z' not found."

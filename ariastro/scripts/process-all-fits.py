@@ -84,6 +84,7 @@ def main():
 
         width, height = get_dims(filename_test)
 
+
         # get_exptime(os.path.join(PATH, galaxy_name + "_u.fits"))
 
         row = find_row_by_galaxy_name(table, galaxy_name)
@@ -128,6 +129,20 @@ def main():
         x0i, y0i = get_x0y0(os.path.join(PATH, galaxy_name + "_i.fits"))
         x0z, y0z = get_x0y0(os.path.join(PATH, galaxy_name + "_z.fits"))
 
+
+        nmgyu = get_nmgy(os.path.join(PATH, galaxy_name + "_u.fits"))
+        nmgyg = get_nmgy(os.path.join(PATH, galaxy_name + "_g.fits"))
+        nmgyr = get_nmgy(os.path.join(PATH, galaxy_name + "_r.fits"))
+        nmgyi = get_nmgy(os.path.join(PATH, galaxy_name + "_i.fits"))
+        nmgyz = get_nmgy(os.path.join(PATH, galaxy_name + "_z.fits"))
+
+        #skybg_u = "skybg_u" /0.0044599
+        #skybg_g = row["skybg_g"] /0.0044599
+        #skybg_r = row["skybg_r"] /0.0044599
+        #skybg_i = row["skybg_i"] /0.0044599
+        #skybg_z = row["skybg_z"] /0.0044599
+
+
         search_replace = [
             ("@@@@@@", galaxy_name),
             ("WWWWWW", str(width)),
@@ -147,11 +162,16 @@ def main():
             ("YRYRYR", str(float(y0r))),
             ("YIYIYI", str(float(y0i))),
             ("YZYZYZ", str(float(y0z))),
-            ("BKGU", row["skybg_u"]),
-            ("BKGG", row["skybg_g"]),
-            ("BKGR", row["skybg_r"]),
-            ("BKGI", row["skybg_i"]),
-            ("BKGZ", row["skybg_z"]),
+            ("BKGU", str(float(row["skybg_u"])/nmgyu)),
+            ("BKGG", str(float(row["skybg_g"])/nmgyg)),
+            ("BKGR", str(float(row["skybg_r"])/nmgyr)),
+            ("BKGI", str(float(row["skybg_i"])/nmgyi)),
+            ("BKGZ", str(float(row["skybg_z"])/nmgyz)),
+            #("BKGU", str(float(skybg_u))),
+            #("BKGG", str(float(skybg_g))),
+            #("BKGR", str(float(skybg_r))),
+            #("BKGI", str(float(skybg_i))),
+            #("BKGZ", str(float(skybg_z))),
             ("MMAGU", row["u"]),
             ("MMAGG", row["g"]),
             ("MMAGR", row["r"]),

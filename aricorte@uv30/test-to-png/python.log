@@ -1,0 +1,201 @@
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-11-25 13:11:12 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F378' not found."
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F395' not found."
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F410' not found."
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F430' not found."
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_G' not found."
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F515' not found."
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_R' not found."
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F660' not found."
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_I' not found."
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F861' not found."
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_Z' not found."
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-11-25 13:12:43 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[ERROR   ] Error processing file 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': ''function' object has no attribute 'info''
+Traceback (most recent call last):
+  File "/home/j/Documents/projects/astro/github/ariastro/ariastro/scripts/galfit-fits-to-png.py", line 46, in <module>
+    ariastro.draw_galfit_tiles(f, image_width=args.width, preprocessing=preprocess)
+  File "/home/j/Documents/projects/astro/github/ariastro/ariastro/visgalfit.py", line 113, in draw_galfit_tiles
+    a99.get_python_logger.info("Number is {}".format(number))
+AttributeError: 'function' object has no attribute 'info'
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-11-25 13:13:01 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] Number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F378' not found."
+[INFO    ] Number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F395' not found."
+[INFO    ] Number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F410' not found."
+[INFO    ] Number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F430' not found."
+[INFO    ] Number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_G' not found."
+[INFO    ] Number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F515' not found."
+[INFO    ] Number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_R' not found."
+[INFO    ] Number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F660' not found."
+[INFO    ] Number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_I' not found."
+[INFO    ] Number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F861' not found."
+[INFO    ] Number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_Z' not found."
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-11-25 13:13:48 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F378' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F395' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F410' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F430' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_G' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F515' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_R' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F660' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_I' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F861' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File 'G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_Z' not found."
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-11-25 13:19:26 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] AUTO LOAD: max file size: 1.25829e+06
+[INFO    ] Imported collaborator package 'f311.filetypes'
+[INFO    ] Imported collaborator package 'f311.explorer'
+[INFO    ] Imported collaborator package 'convmolworks'
+[INFO    ] Imported collaborator package 'ariastro'
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-11-25 13:23:56 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] AUTO LOAD: max file size: 1.25829e+06
+[INFO    ] Imported collaborator package 'f311.filetypes'
+[INFO    ] Imported collaborator package 'f311.explorer'
+[INFO    ] Imported collaborator package 'convmolworks'
+[INFO    ] Imported collaborator package 'ariastro'
+[INFO    ] HDU data is 2D, will add y axis with only one row to make it 3D
+[INFO    ] Welcome from WSparseCube.__init__()
+[INFO    ] Welcome from WFileSparseCube.__init__()
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-11-25 13:35:29 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] AUTO LOAD: max file size: 1.25829e+06
+[INFO    ] Imported collaborator package 'f311.filetypes'
+[INFO    ] Imported collaborator package 'f311.explorer'
+[INFO    ] Imported collaborator package 'convmolworks'
+[INFO    ] Imported collaborator package 'ariastro'
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-11-25 13:37:09 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] AUTO LOAD: max file size: 1.25829e+06
+[INFO    ] Imported collaborator package 'f311.filetypes'
+[INFO    ] Imported collaborator package 'f311.explorer'
+[INFO    ] Imported collaborator package 'convmolworks'
+[INFO    ] Imported collaborator package 'ariastro'
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F378' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F395' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F410' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F430' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_G' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F515' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_R' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F660' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_I' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F861' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_Z' not found."
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-11-27 22:07:12 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] AUTO LOAD: max file size: 1.25829e+06
+[INFO    ] Imported collaborator package 'f311.filetypes'
+[INFO    ] Imported collaborator package 'f311.explorer'
+[INFO    ] Imported collaborator package 'convmolworks'
+[INFO    ] Imported collaborator package 'ariastro'
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F378' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F395' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F410' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F430' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_G' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F515' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_R' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F660' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_I' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_F861' not found."
+[INFO    ] Found keyword '1_RE_0', number is 1
+[WARNING ] File './G004_re3_n3_pa3_only_sers_u_eq_0.fits': "Keyword '1_RS_Z' not found."
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-11-27 22:19:06 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] AUTO LOAD: max file size: 1.25829e+06
+[INFO    ] Imported collaborator package 'f311.filetypes'
+[INFO    ] Imported collaborator package 'f311.explorer'
+[INFO    ] Imported collaborator package 'convmolworks'
+[INFO    ] Imported collaborator package 'ariastro'
+[INFO    ] *********************************************
+[INFO    ] *** Session started @ 2017-12-15 20:27:40 ***
+[INFO    ] *********************************************
+[INFO    ] $ Logging to console $
+[INFO    ] $ Logging to file 'python.log' $
+[INFO    ] AUTO LOAD: max file size: 1.25829e+06
+[INFO    ] Imported collaborator package 'f311'
+[INFO    ] Imported collaborator package 'pyfant'
+[INFO    ] Imported collaborator package 'pyfant'
+[INFO    ] Imported collaborator package 'aosss'
+[INFO    ] Imported collaborator package 'convmolworks'
+[INFO    ] Imported collaborator package 'ariastro'

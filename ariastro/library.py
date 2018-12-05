@@ -8,9 +8,9 @@ import re
 import multiprocessing as mp
 
 __all__ = ["FILENAME_NOT_RUN", "FILENAME_BAD_FIT", "isolate_code", "write_not_run", "write_bad_fit",
-           "get_dims", "get_exptime", "get_x0y0", "load_jma_gri", "find_row_by_galaxy_name",
+           "get_dims", "get_exptime", "get_x0y0", "get_nmgy", "load_jma_gri", "find_row_by_galaxy_name",
            "find_row_by_galaxy_name2", "dump_header", "solve_feedme_template", "get_output_pattern",
-           "fromNMAGYtoCOUNTs", ]
+           "fromNMAGYtoCOUNTs"]
 
 
 FILENAME_NOT_RUN = "not-run.csv"
@@ -76,6 +76,16 @@ def get_x0y0(filename):
     hdulist = fits.open(filename)
     hdu = hdulist[0]
     ret = (hdu.header["OBJXPIX"],hdu.header["OBJYPIX"])
+    hdulist.close()
+    return ret
+
+
+
+def get_nmgy(filename):
+    """Returns x0,y0 from image header"""
+    hdulist = fits.open(filename)
+    hdu = hdulist[0]
+    ret = (hdu.header["NMGY"])
     hdulist.close()
     return ret
                         
@@ -176,10 +186,13 @@ def fromNMAGYtoCOUNTs(dir_="."):
     for file_name in ff:
         print("Converting {}".format(file_name))
         hdulist = fits.open(file_name)
+        hdu = hdulist[0]
+        nmgy = (hdu.header["NMGY"])
 
         med = np.mean(hdulist[0].data)
-        print("Mmmmmmmmmmmmm {}".format(med))
-        hdulist[0].data /= 0.00449599
+        print("Mmmmmmmmmmmmm {}".format(med), nmgy)
+        #hdulist[0].data *= 0.00449599
+        hdulist[0].data /= nmgy
 
         os.unlink(file_name)
 

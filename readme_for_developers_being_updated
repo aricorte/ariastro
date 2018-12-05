@@ -2,11 +2,12 @@
 
 ```shell
 cd CALIFA/github
-sudo python setup.py develop
+(sudo) rm -r ariastro.egg-info
+python setup.py develop
 cd scripts
 chmod +x *.py
 ```
-
+note: you should not run it as sudo
 
 
 ## How to setup GitHub project

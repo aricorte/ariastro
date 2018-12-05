@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc1cddf5-b1ba-4a7b-be80-8c8c6ef3cf3b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ariastro/scripts/process-all-fits_SPLUS.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data-test/1237668494708178979_ss.fits.png" afterPath="$PROJECT_DIR$/data-test/1237668494708178979_ss.fits.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/ariastro-0.18.2.28.1.tar.gz" afterPath="$PROJECT_DIR$/dist/ariastro-0.18.2.28.1.tar.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/CALIFA.iml" afterPath="$PROJECT_DIR$/.idea/CALIFA.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ariastro/library.py" afterPath="$PROJECT_DIR$/ariastro/library.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ariastro/scripts/process-all-fits.py" afterPath="$PROJECT_DIR$/ariastro/scripts/process-all-fits.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data-test/python.log" afterPath="$PROJECT_DIR$/data-test/python.log" />
     </list>
     <ignored path="CALIFA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,18 +45,8 @@
       <file leaf-file-name="process-all-fits_SPLUS.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ariastro/scripts/process-all-fits_SPLUS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_pydev_execfile.py" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -123,11 +105,21 @@
       <file leaf-file-name="library.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ariastro/library.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+            <state relative-caret-position="638">
+              <caret line="202" column="51" selection-start-line="202" selection-start-column="51" selection-end-line="202" selection-end-column="51" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="psf.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ariastro/scripts/psf.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -195,8 +187,8 @@
         <option value="$PROJECT_DIR$/ariastro/visgalfit.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/ariastro/scripts/process-all-fits.py" />
-        <option value="$PROJECT_DIR$/ariastro/library.py" />
         <option value="$PROJECT_DIR$/ariastro/scripts/process-all-fits_SPLUS.py" />
+        <option value="$PROJECT_DIR$/ariastro/library.py" />
       </list>
     </option>
   </component>
@@ -288,6 +280,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ariastro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="github" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ariastro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -638,13 +648,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ariastro.egg-info/SOURCES.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ariastro.egg-info/top_level.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -814,16 +817,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ariastro/scripts/process-all-fits_SPLUS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="270">
+          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ariastro/scripts/psf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ariastro/library.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+        <state relative-caret-position="638">
+          <caret line="202" column="51" selection-start-line="202" selection-start-column="51" selection-end-line="202" selection-end-column="51" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

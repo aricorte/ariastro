@@ -20,7 +20,7 @@ def main():
         filename = os.path.basename(f)
         fwhm, beta =  get_psf_data(filename)
         print(filename,fwhm,beta)
-        make_psf(fwhm, beta, radius, filename + ".psf")
+        make_psf(fwhm, beta, radius, "psf_" + filename)
         pieces = filename.split("_")
         galaxy_name = pieces[1]
         band_name = pieces[2]
